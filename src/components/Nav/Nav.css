@@ -1,0 +1,132 @@
+.nav {
+  grid-area: nav;
+
+  width: 240px;
+  min-height: 100vh;
+
+  padding: 24px 16px;
+
+  background: var(--sidebar);
+  border-right: 1px solid #29222f;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Pulse logo */
+.logo {
+  padding: 0 12px;
+  margin-bottom: 40px;
+
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+
+  color: var(--text-white);
+}
+
+
+/* Individual navigation sections */
+.nav-section {
+  margin-bottom: 28px;
+}
+
+
+/* Section title: MAIN, MANAGE, SETTINGS */
+.nav-section > p {
+  margin: 0 12px 10px;
+
+  color: #9f96aa;
+
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+
+/* Links container */
+.nav-link {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 12px;
+
+  margin-bottom: 3px;
+
+  border-radius: 9px;
+
+  color: #b5afbd;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: var(--transition);
+}
+
+
+/* Hover */
+.nav-link:hover {
+  background: var(--sidebar-hover);
+
+  color: var(--text-white);
+
+  transform: translateX(2px);
+}
+
+
+/* Individual links */
+.nav-links a {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  padding: 10px 12px;
+
+  border-radius: 8px;
+
+  color: #b5afbd;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* Hover */
+.nav-links a:hover {
+  background: var(--primary);
+
+  color: var(--text-white);
+
+  transform: translateX(2px);
+
+  box-shadow: var(--shadow-purple);
+}
+
+
+/* Active page */
+.nav-link.active {
+  background: var(--primary);
+
+  color: var(--text-white);
+
+  box-shadow: var(--shadow-purple);
+}
+
+
+.nav-link.active .nav-icon {
+  color: var(--text-white);
+}

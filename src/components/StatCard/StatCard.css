@@ -1,0 +1,75 @@
+.stat-card {
+  width: 100%;
+  min-width: 0;
+
+  padding: 22px;
+
+  box-sizing: border-box;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-md);
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--border-purple);
+
+  box-shadow: var(--shadow-md);
+}
+
+/* Card title */
+.stat-card p {
+  margin: 0;
+
+  color: var(--text-muted);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.04em;
+}
+
+/* Main number */
+.stat-card h2 {
+  margin: 4px 0;
+
+  color: var(--text);
+
+  font-size: 28px;
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.5px;
+}
+
+/* Percentage change */
+.stat-card span {
+  color: var(--success);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Comparison text */
+.stat-card small {
+  color: var(--text-light);
+
+  font-size: 12px;
+}

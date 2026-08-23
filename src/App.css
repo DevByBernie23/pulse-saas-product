@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+
+  display: grid;
+
+  grid-template-areas:
+    "nav header"
+    "nav main";
+
+  grid-template-columns: 240px minmax(0, 1fr);
+  grid-template-rows: 72px minmax(0, 1fr);
+
+  background: var(--bg);
+}
+
+.header {
+  grid-area: header;
+
+  min-width: 0;
+  min-height: 0;
+
+  background: var(--surface);
+
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  grid-area: nav;
+
+  height: 100vh;
+
+  position: sticky;
+  top: 0;
+
+  padding: 24px 16px;
+
+  background: var(--sidebar);
+
+  color: var(--text-white);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  grid-area: main;
+
+  min-width: 0;
+  width: 100%;
+  min-height: 0;
+
+  background: var(--bg);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 4px 10px 28px;
+}
+
+.nav-logo-mark {
+  width: 30px;
+  height: 30px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 9px;
+
+  background: var(--primary);
+
+  font-size: 14px;
+  font-weight: 800;
+
+  box-shadow: var(--shadow-purple);
+}
+
+.nav-logo span {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.nav-link.active {
+  background: var(--primary);
+
+  color: var(--text-white);
+
+  box-shadow: var(--shadow-purple);
+}
+
+.nav-link.active .nav-icon {
+  color: var(--text-white);
+}
+
+.btn-primary {
+  border: 0;
+
+  padding: 10px 15px;
+
+  border-radius: 8px;
+
+  background: var(--primary);
+  color: var(--text-white);
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+
+  transform: translateY(-1px);
+
+  box-shadow: var(--shadow-purple);
+}
+
+.btn-secondary {
+  padding: 10px 15px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 8px;
+
+  background: var(--surface);
+
+  color: var(--text);
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.btn-secondary:hover {
+  background: var(--primary-light);
+
+  border-color: var(--border-purple);
+
+  color: var(--primary);
+}
+a{
+  text-decoration: none;
+}

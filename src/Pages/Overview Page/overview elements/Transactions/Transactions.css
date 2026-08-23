@@ -1,0 +1,238 @@
+.transactions {
+  width: 100%;
+
+  margin-top: 24px;
+  padding: 28px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* Header */
+
+.transactions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  margin-bottom: 26px;
+}
+
+.transactions-header h2 {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: 18px;
+  font-weight: 800;
+
+  letter-spacing: -0.02em;
+}
+
+.transactions-header p {
+  margin: 6px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 12px;
+}
+
+.transactions-header button {
+  padding: 8px 12px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+
+  background: var(--surface);
+
+  color: var(--accent);
+
+  font-family: inherit;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.transactions-header button:hover {
+  background: var(--accent-light);
+
+  border-color: var(--accent);
+}
+
+
+/* Table wrapper */
+
+.table-container {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+
+/* THE IMPORTANT PART */
+
+.transactions-table {
+  width: 100%;
+
+  min-width: 760px;
+
+  table-layout: fixed;
+
+  border-collapse: collapse;
+}
+
+
+/* Give every column a deliberate amount of space */
+
+.transactions-table th:nth-child(1),
+.transactions-table td:nth-child(1) {
+  width: 13%;
+}
+
+.transactions-table th:nth-child(2),
+.transactions-table td:nth-child(2) {
+  width: 22%;
+}
+
+.transactions-table th:nth-child(3),
+.transactions-table td:nth-child(3) {
+  width: 21%;
+}
+
+.transactions-table th:nth-child(4),
+.transactions-table td:nth-child(4) {
+  width: 12%;
+}
+
+.transactions-table th:nth-child(5),
+.transactions-table td:nth-child(5) {
+  width: 16%;
+}
+
+.transactions-table th:nth-child(6),
+.transactions-table td:nth-child(6) {
+  width: 16%;
+}
+
+
+/* Table headings */
+
+.transactions-table th {
+  padding: 12px 14px;
+
+  background: var(--surface-muted);
+
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  text-align: left;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.06em;
+}
+
+
+/* Table cells */
+
+.transactions-table td {
+  height: 58px;
+
+  padding: 14px;
+
+  border-bottom: 1px solid var(--border);
+
+  color: var(--text);
+
+  font-size: 13px;
+
+  vertical-align: middle;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.transactions-table tbody tr {
+  transition: var(--transition);
+}
+
+.transactions-table tbody tr:hover {
+  background: var(--accent-light);
+}
+
+.transactions-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* Status */
+
+.status {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 82px;
+
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.status-completed {
+  background: var(--success-bg);
+
+  color: var(--success);
+}
+
+.status-pending {
+  background: #fff5d6;
+
+  color: #9a6b00;
+}
+
+.status-failed {
+  background: var(--danger-bg);
+
+  color: var(--danger);
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+  .transactions {
+    padding: 20px;
+  }
+
+  .transactions-table {
+    min-width: 760px;
+  }
+
+  .transactions-table th,
+  .transactions-table td {
+    padding: 13px 12px;
+  }
+}

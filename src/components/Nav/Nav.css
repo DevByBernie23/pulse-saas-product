@@ -1,17 +1,17 @@
-.nav {
+/* .nav {
   grid-area: nav;
 
   width: 240px;
   min-height: 100vh;
 
-  padding: 24px 16px;
+  padding: 24px 12px;
 
   background: var(--sidebar);
   border-right: 1px solid #29222f;
 
   display: flex;
   flex-direction: column;
-}
+} */
 
 
 /* Pulse logo */
@@ -70,15 +70,6 @@
 }
 
 
-/* Hover */
-.nav-link:hover {
-  background: var(--sidebar-hover);
-
-  color: var(--text-white);
-
-  transform: translateX(2px);
-}
-
 
 /* Individual links */
 .nav-links a {
@@ -114,6 +105,7 @@
   transform: translateX(2px);
 
   box-shadow: var(--shadow-purple);
+  width: 100%;
 }
 
 
@@ -130,3 +122,9 @@
 .nav-link.active .nav-icon {
   color: var(--text-white);
 }
+ @media (max-width: 600px) {
+  .nav{
+    width: 170px;
+  }
+  
+ }

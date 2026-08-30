@@ -9,7 +9,6 @@
   background: var(--surface);
 
   border: 1px solid var(--border);
-
   border-radius: var(--radius-md);
 
   display: flex;
@@ -31,7 +30,9 @@
   box-shadow: var(--shadow-md);
 }
 
+
 /* Card title */
+
 .stat-card p {
   margin: 0;
 
@@ -41,11 +42,12 @@
   font-weight: 600;
 
   text-transform: uppercase;
-
   letter-spacing: 0.04em;
 }
 
+
 /* Main number */
+
 .stat-card h2 {
   margin: 4px 0;
 
@@ -55,11 +57,12 @@
   font-weight: 800;
 
   line-height: 1.2;
-
   letter-spacing: -0.5px;
 }
 
+
 /* Percentage change */
+
 .stat-card span {
   color: var(--success);
 
@@ -67,9 +70,48 @@
   font-weight: 700;
 }
 
+
 /* Comparison text */
+
 .stat-card small {
   color: var(--text-light);
 
   font-size: 12px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .stat-card {
+    padding: 18px;
+
+    border-radius: var(--radius-md);
+
+    gap: 6px;
+  }
+
+  .stat-card p {
+    font-size: 11px;
+  }
+
+  .stat-card h2 {
+    margin: 3px 0;
+
+    font-size: 24px;
+  }
+
+  .stat-card span {
+    font-size: 12px;
+  }
+
+  .stat-card small {
+    font-size: 11px;
+  }
+
+  /* Disable the desktop lift on touch-sized screens */
+  .stat-card:hover {
+    transform: none;
+  }
 }

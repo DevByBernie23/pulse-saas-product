@@ -1,15 +1,20 @@
 .get-started {
   min-height: 100vh;
+  min-height: 100dvh;
 
   display: flex;
   flex-direction: column;
 
   background: var(--bg);
   color: var(--text);
+
+  overflow-x: hidden;
 }
 
 
-/* Brand */
+/* ========================================
+   BRAND
+======================================== */
 
 .get-started-brand {
   padding: 28px 6%;
@@ -17,17 +22,17 @@
 
 .get-started-brand a {
   color: var(--text);
-
   text-decoration: none;
 
   font-size: 22px;
   font-weight: 800;
-
   letter-spacing: -0.04em;
 }
 
 
-/* Main content */
+/* ========================================
+   MAIN CONTENT
+======================================== */
 
 .get-started-content {
   width: 100%;
@@ -38,16 +43,19 @@
   padding: 55px 24px 80px;
 
   display: grid;
-
-  grid-template-columns: 1fr 430px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 430px);
 
   gap: 90px;
 
   align-items: center;
+
+  box-sizing: border-box;
 }
 
 
-/* Intro */
+/* ========================================
+   INTRO
+======================================== */
 
 .get-started-intro > p {
   margin: 0 0 18px;
@@ -93,10 +101,13 @@
 }
 
 
-/* Form */
+/* ========================================
+   SIGNUP FORM
+======================================== */
 
 .signup-form {
   width: 100%;
+  box-sizing: border-box;
 
   padding: 30px;
 
@@ -113,15 +124,13 @@
 
 .form-row {
   display: grid;
-
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
   gap: 12px;
 }
 
 .form-group {
   display: flex;
-
   flex-direction: column;
 
   gap: 7px;
@@ -138,6 +147,10 @@
 
 .form-group input {
   width: 100%;
+  min-width: 0;
+  min-height: 42px;
+
+  box-sizing: border-box;
 
   padding: 11px 13px;
 
@@ -169,10 +182,13 @@
 }
 
 
-/* Button */
+/* ========================================
+   SIGNUP BUTTON
+======================================== */
 
 .signup-btn {
   width: 100%;
+  min-height: 44px;
 
   padding: 12px 16px;
 
@@ -196,12 +212,17 @@
 
 .signup-btn:hover {
   transform: translateY(-1px);
-
   filter: brightness(0.95);
 }
 
+.signup-btn:active {
+  transform: translateY(0);
+}
 
-/* Login */
+
+/* ========================================
+   LOGIN
+======================================== */
 
 .login-text {
   margin: 18px 0 0;
@@ -211,6 +232,8 @@
   color: var(--text-muted);
 
   font-size: 12px;
+
+  line-height: 1.5;
 }
 
 .login-text a {
@@ -226,35 +249,64 @@
 }
 
 
-/* Footer */
+/* ========================================
+   FOOTER
+======================================== */
 
 .get-started-footer {
   margin: auto auto 25px;
+
+  padding: 0 20px;
 
   color: var(--text-light);
 
   font-size: 11px;
 
   text-align: center;
+
+  line-height: 1.5;
 }
 
 
-/* Responsive */
+/* ========================================
+   TABLET / SMALL LAPTOP
+======================================== */
+
+@media (max-width: 1000px) {
+  .get-started-content {
+    gap: 50px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .get-started-intro h1 {
+    font-size: 46px;
+  }
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
 
 @media (max-width: 800px) {
-
   .get-started-content {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 550px);
+
+    justify-content: center;
 
     gap: 40px;
 
-    max-width: 550px;
-
     padding-top: 30px;
+    padding-bottom: 60px;
   }
 
   .get-started-intro {
     text-align: center;
+  }
+
+  .get-started-intro > p {
+    margin-bottom: 14px;
   }
 
   .get-started-intro h1,
@@ -266,29 +318,124 @@
   .get-started-intro h1 {
     font-size: 42px;
   }
+
+  .get-started-intro h2 {
+    font-size: 14px;
+    line-height: 1.7;
+  }
 }
 
 
-@media (max-width: 500px) {
+/* ========================================
+   MOBILE
+======================================== */
 
+@media (max-width: 500px) {
   .get-started-brand {
     padding: 22px 20px;
   }
 
+  .get-started-brand a {
+    font-size: 20px;
+  }
+
   .get-started-content {
-    padding: 25px 20px 50px;
+    width: 100%;
+
+    padding: 25px 16px 45px;
+
+    gap: 30px;
+  }
+
+  .get-started-intro > p {
+    margin-bottom: 12px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
   }
 
   .get-started-intro h1 {
-    font-size: 36px;
+    font-size: 34px;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+
+    margin-bottom: 14px;
+  }
+
+  .get-started-intro h2 {
+    font-size: 13px;
+    line-height: 1.65;
   }
 
   .signup-form {
-    padding: 22px;
+    padding: 20px 18px;
+
+    border-radius: var(--radius-md);
   }
 
   .form-row {
     grid-template-columns: 1fr;
     gap: 0;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-group input {
+    min-height: 44px;
+    font-size: 14px;
+  }
+
+  .signup-btn {
+    min-height: 46px;
+  }
+
+  .login-text {
+    margin-top: 16px;
+  }
+
+  .get-started-footer {
+    margin-bottom: 18px;
+  }
+}
+
+
+/* ========================================
+   SMALL PHONES
+======================================== */
+
+@media (max-width: 380px) {
+  .get-started-brand {
+    padding: 18px 16px;
+  }
+
+  .get-started-content {
+    padding: 20px 12px 35px;
+    gap: 24px;
+  }
+
+  .get-started-intro h1 {
+    font-size: 30px;
+  }
+
+  .get-started-intro h2 {
+    font-size: 12px;
+  }
+
+  .signup-form {
+    padding: 18px 14px;
+  }
+
+  .form-group {
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+
+  .form-group label {
+    font-size: 11px;
+  }
+
+  .form-group input {
+    min-height: 42px;
   }
 }

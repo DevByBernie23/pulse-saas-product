@@ -8,10 +8,9 @@ const Orders = () => {
   return (
      <div>
        <div className="app">
-        <div>
+        
           <Header className="header" /> 
-      {/* <Dashboard/> */}
-      </div>
+      
       
       <Nav className="nav"/>
        <main className="hero">

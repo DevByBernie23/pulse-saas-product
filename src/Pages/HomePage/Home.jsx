@@ -3,6 +3,8 @@ import './Home.css';
 import { Link } from 'react-router-dom';
 import { customerOrders, productsInStore, customers, billing, overview, getstarted, signin } from '../../data/routes';
 import RevenueChart from '../Overview Page/overview elements/RevenueChart/RevenueChart';
+import Analytics from '../Analytics Page/Analytics'
+import AnalyticsStats from '../../components/Analytics stats/AnalyticsStats';
 
 
 const Home = () => {
@@ -71,7 +73,7 @@ const Home = () => {
           </div>
 
           <div className="preview-chart">
-            Revenue Overview
+            <RevenueChart/>
           </div>
         </div>
 
@@ -139,7 +141,8 @@ const Home = () => {
         </p>
 
         <div className="analytics-preview">
-          <RevenueChart/>
+      
+         <AnalyticsStats/>
         </div>
 
       </section>
@@ -176,9 +179,9 @@ const Home = () => {
           designed to help you move forward.
         </p>
 
-        <button>
+        <Link to={getstarted}><button>
           Start using Pulse
-        </button>
+        </button></Link>
 
       </section>
 

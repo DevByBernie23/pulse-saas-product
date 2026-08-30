@@ -26,7 +26,7 @@ const Transactions = () => {
             </tr>
           </thead>
 
-          <tbody>
+          <tbody className='tbody'>
             {transactions.map((transaction) => (
               <tr key={transaction.id}>
                 <td>{transaction.id}</td>

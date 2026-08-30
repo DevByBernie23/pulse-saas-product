@@ -1,133 +1,163 @@
 .analytics {
   grid-area: main;
-
   width: 100%;
   min-width: 0;
   min-height: 0;
-
   padding: 32px;
-
   background: var(--bg);
-
   overflow-y: auto;
   overflow-x: hidden;
 }
+
+
+/* ========================================
+   INTRO
+======================================== */
 
 .analytics-intro {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-
   gap: 24px;
-
   margin-bottom: 28px;
 }
 
 .analytics-intro h1 {
   margin: 0 0 6px;
-
   font-size: 28px;
   font-weight: 700;
-
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   color: var(--text);
 }
 
 .analytics-intro p {
   margin: 0;
-
   color: var(--text-muted);
-
   font-size: 14px;
+  line-height: 1.5;
 }
 
 .analytics-intro select {
+  flex-shrink: 0;
+  min-height: 38px;
   padding: 9px 12px;
-
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-
   background: var(--surface);
-
   font-family: inherit;
   font-size: 13px;
-
   color: var(--text);
-
   outline: none;
-
   cursor: pointer;
-
   transition: var(--transition);
 }
 
 .analytics-intro select:focus {
   border-color: var(--primary);
-
   box-shadow: 0 0 0 3px var(--primary-light);
 }
 
+
+/* ========================================
+   STAT CARDS
+======================================== */
+
 .analytics-stats {
   display: grid;
-
   grid-template-columns: repeat(4, minmax(0, 1fr));
-
   gap: 20px;
-
   margin-bottom: 24px;
 }
 
+
+/* ========================================
+   BOTTOM CONTENT
+======================================== */
+
 .analytics-bottom {
   display: grid;
-
   grid-template-columns:
     minmax(0, 1.5fr)
     minmax(280px, 1fr);
-
   gap: 20px;
 }
 
+
+/* ========================================
+   ANALYTICS CARDS
+======================================== */
+
 .analytics-card {
   min-width: 0;
-
   padding: 24px;
-
   background: var(--surface);
-
   border: 1px solid var(--border);
-
   border-radius: var(--radius-md);
-
   box-shadow: var(--shadow-sm);
-
   transition: var(--transition);
 }
 
 .analytics-card:hover {
   border-color: var(--border-purple);
-
   box-shadow: var(--shadow-md);
 }
 
 .analytics-card h2 {
   margin: 0 0 20px;
-
   font-size: 17px;
   font-weight: 700;
-
+  line-height: 1.3;
   color: var(--text);
 }
 
+
+/* ========================================
+   LARGE TABLETS
+======================================== */
+
 @media (max-width: 1100px) {
+  .analytics {
+    padding: 28px;
+  }
+
   .analytics-stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
+
+/* ========================================
+   TABLET
+======================================== */
+
 @media (max-width: 800px) {
+  .analytics {
+    padding: 24px 20px;
+  }
+
+  .analytics-intro {
+    gap: 18px;
+    margin-bottom: 24px;
+  }
+
+  .analytics-intro h1 {
+    font-size: 25px;
+  }
+
   .analytics-bottom {
     grid-template-columns: 1fr;
   }
+
+  .analytics-card {
+    padding: 20px;
+  }
 }
+
+
+/* ========================================
+   MOBILE
+======================================== */
 
 @media (max-width: 600px) {
   .analytics {
@@ -136,13 +166,76 @@
 
   .analytics-intro {
     flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .analytics-intro h1 {
+    margin-bottom: 5px;
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  .analytics-intro p {
+    font-size: 13px;
+    line-height: 1.5;
   }
 
   .analytics-intro select {
     width: 100%;
+    min-height: 42px;
+    padding: 10px 12px;
   }
 
   .analytics-stats {
     grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .analytics-bottom {
+    gap: 16px;
+  }
+
+  .analytics-card {
+    padding: 18px 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .analytics-card h2 {
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+}
+
+
+/* ========================================
+   SMALL PHONES
+======================================== */
+
+@media (max-width: 400px) {
+  .analytics {
+    padding: 16px 12px;
+  }
+
+  .analytics-intro {
+    margin-bottom: 18px;
+  }
+
+  .analytics-intro h1 {
+    font-size: 20px;
+  }
+
+  .analytics-intro p {
+    font-size: 12px;
+  }
+
+  .analytics-card {
+    padding: 16px 14px;
+  }
+
+  .analytics-stats {
+    gap: 10px;
   }
 }

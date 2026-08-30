@@ -1,7 +1,7 @@
 import './App.css';
 import './index.css'
 import { Routes, Route } from 'react-router-dom';
-import { analytics, customers, home, customerOrders, overview, productsInStore, billing, settings, getstarted, signin, homepage } from './data/routes';
+import { analytics, customers, home, customerOrders, overview, productsInStore, billing, settings, getstarted, signin, homepage, analyticsstats } from './data/routes';
 import Home from './Pages/HomePage/Home';
 import Overview from './Pages/Overview Page/Overview'
 import Analytics from './Pages/Analytics Page/Analytics';
@@ -12,6 +12,7 @@ import Billing from './Pages/Billing Page/Billing';
 import Settings from './Pages/Settings Page/Settings';
 import GetStarted from './Pages/GetStartedPage/GetStarted';
 import SignIn from './Pages/SignInPage/SignIn';
+import AnalyticsStats from './components/Analytics stats/AnalyticsStats';
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
     <Route path={getstarted} element={<GetStarted/>}/>
     <Route path={signin} element={<SignIn/>}/>
     <Route path={homepage} element={<Home/>}/>
+    <Route path={analyticsstats} element={<AnalyticsStats/>}/>
    </Routes>
   )
 };

@@ -1,3 +1,7 @@
+/* ========================================
+   RESET
+======================================== */
+
 * {
   box-sizing: border-box;
 }
@@ -7,67 +11,103 @@ body,
 #root {
   margin: 0;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
 }
 
 body {
-  overflow-x: hidden;
+  overflow: none;
 }
 
-.app {
-  width: 100%;
-  min-height: 100vh;
+a {
+  text-decoration: none;
+}
 
+
+/* ========================================
+   APP
+======================================== */
+
+.app {
   display: grid;
+
+  width: 100%;
+  height: 100vh;
+
+  grid-template-columns: 180px minmax(0, 1fr);
+  grid-template-rows: 72px minmax(0, 1fr);
 
   grid-template-areas:
     "nav header"
     "nav main";
 
-  grid-template-columns: 240px minmax(0, 1fr);
-  grid-template-rows: 72px minmax(0, 1fr);
-
   background: var(--bg);
 }
 
-.header {
-  grid-area: header;
 
-  min-width: 0;
-  min-height: 0;
-
-  background: var(--surface);
-
-  border-bottom: 1px solid var(--border);
-}
+/* ========================================
+   NAV
+======================================== */
 
 .nav {
   grid-area: nav;
 
-  height: 100vh;
+  width: 300px;
+  height: 100%;
 
-  position: sticky;
-  top: 0;
-
-  padding: 24px 16px;
-
-  background: var(--sidebar);
-
-  color: var(--text-white);
+  padding: 24px 20px;
 
   display: flex;
   flex-direction: column;
+
+  background: var(--sidebar);
+  color: var(--text-white);
+  
+  overflow: hidden;
 }
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+  grid-area: header;
+
+  width: 100%;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+
+  z-index: 1;
+}
+
+
+/* ========================================
+   MAIN
+======================================== */
 
 .hero {
   grid-area: main;
 
-  min-width: 0;
   width: 100%;
-  min-height: 0;
+  height: 100%;
+
+  padding: 32px;
 
   background: var(--bg);
+
+  overflow-x: hidden;
+  overflow-y: auto;
 }
+
+
+/* ========================================
+   NAV LOGO
+======================================== */
 
 .nav-logo {
   display: flex;
@@ -84,6 +124,8 @@ body {
   display: grid;
   place-items: center;
 
+  flex-shrink: 0;
+
   border-radius: 9px;
 
   background: var(--primary);
@@ -98,44 +140,61 @@ body {
   font-size: 18px;
   font-weight: 800;
   letter-spacing: -0.5px;
+  white-space: nowrap;
 }
+
+
+/* ========================================
+   ACTIVE NAV
+======================================== */
 
 .nav-link.active {
   background: var(--primary);
-
   color: var(--text-white);
-
   box-shadow: var(--shadow-purple);
 }
 
 .nav-link.active .nav-icon {
   color: var(--text-white);
 }
+.nav-links a:hover {
+  background: var(--primary);
+
+  color: var(--text-white);
+
+  transform: translateX(2px);
+
+  box-shadow: var(--shadow-purple);
+  width: 100%;
+}
+
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.btn-primary,
+.btn-secondary {
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: var(--transition);
+}
 
 .btn-primary {
-  border: 0;
-
   padding: 10px 15px;
-
+  border: 0;
   border-radius: 8px;
 
   background: var(--primary);
   color: var(--text-white);
 
-  font-family: inherit;
-  font-size: 13px;
   font-weight: 700;
-
-  cursor: pointer;
-
-  transition: var(--transition);
 }
 
 .btn-primary:hover {
   background: var(--primary-hover);
-
   transform: translateY(-1px);
-
   box-shadow: var(--shadow-purple);
 }
 
@@ -143,29 +202,67 @@ body {
   padding: 10px 15px;
 
   border: 1px solid var(--border);
-
   border-radius: 8px;
 
   background: var(--surface);
-
   color: var(--text);
 
-  font-family: inherit;
-  font-size: 13px;
   font-weight: 600;
-
-  cursor: pointer;
-
-  transition: var(--transition);
 }
 
 .btn-secondary:hover {
   background: var(--primary-light);
-
   border-color: var(--border-purple);
-
   color: var(--primary);
 }
-a{
-  text-decoration: none;
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+  .app {
+    grid-template-columns: 150px minmax(0, 1fr);
+  }
+
+  .nav {
+    width: 150px;
+    padding: 20px 10px;
+  }
+
+  .hero {
+    padding: 28px 24px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .app {
+    grid-template-columns: 20vw minmax(0, 1fr);
+    grid-template-rows: 64px minmax(0, 1fr);
+
+    grid-template-areas:
+      "header header"
+      "nav main";
+  }
+
+  .header {
+    height: 64px;
+  }
+
+  .nav {
+    width: 20vw;
+    max-width: 164px;
+
+    padding: 20px 10px;
+  }
+
+  .hero {
+    padding: 24px 16px;
+  }
 }

@@ -11,7 +11,14 @@
 
   overflow-y: auto;
   overflow-x: hidden;
+
+  box-sizing: border-box;
 }
+
+
+/* ================================
+   INTRO
+================================ */
 
 .settings-intro {
   margin-bottom: 28px;
@@ -24,14 +31,24 @@
   font-weight: 700;
 
   color: var(--text);
+
+  letter-spacing: -0.02em;
 }
 
 .settings-intro p {
   margin: 0;
 
   font-size: 14px;
+
   color: var(--text-muted);
+
+  line-height: 1.6;
 }
+
+
+/* ================================
+   SETTINGS LAYOUT
+================================ */
 
 .settings-layout {
   display: grid;
@@ -40,11 +57,20 @@
 
   gap: 24px;
 
+  width: 100%;
   max-width: 1000px;
+
+  min-width: 0;
 }
+
+
+/* ================================
+   SIDEBAR
+================================ */
 
 .settings-sidebar {
   display: flex;
+
   flex-direction: column;
 
   gap: 4px;
@@ -60,6 +86,8 @@
   border-radius: var(--radius-md);
 
   box-shadow: var(--shadow-sm);
+
+  box-sizing: border-box;
 }
 
 .settings-sidebar button {
@@ -68,6 +96,7 @@
   padding: 10px 12px;
 
   border: none;
+
   border-radius: var(--radius-sm);
 
   background: transparent;
@@ -75,6 +104,8 @@
   text-align: left;
 
   color: var(--text-muted);
+
+  font-family: inherit;
 
   font-size: 14px;
 
@@ -99,7 +130,14 @@
   box-shadow: var(--shadow-purple);
 }
 
+
+/* ================================
+   SETTINGS CARD
+================================ */
+
 .settings-card {
+  min-width: 0;
+
   padding: 28px;
 
   background: var(--surface);
@@ -109,6 +147,8 @@
   border-radius: var(--radius-md);
 
   box-shadow: var(--shadow-sm);
+
+  box-sizing: border-box;
 }
 
 .settings-card-header {
@@ -131,10 +171,18 @@
   font-size: 13px;
 
   color: var(--text-muted);
+
+  line-height: 1.6;
 }
+
+
+/* ================================
+   FORM
+================================ */
 
 .form-group {
   display: flex;
+
   flex-direction: column;
 
   gap: 7px;
@@ -156,6 +204,8 @@
 
   box-sizing: border-box;
 
+  min-height: 42px;
+
   padding: 10px 12px;
 
   border: 1px solid var(--border);
@@ -165,6 +215,8 @@
   background: var(--surface);
 
   color: var(--text);
+
+  font-family: inherit;
 
   font-size: 14px;
 
@@ -180,17 +232,28 @@
   box-shadow: 0 0 0 3px var(--primary-light);
 }
 
+
+/* ================================
+   SAVE BUTTON
+================================ */
+
 .save-btn {
+  min-height: 42px;
+
   padding: 10px 16px;
 
   border: none;
+
   border-radius: var(--radius-sm);
 
   background: var(--primary);
 
   color: var(--text-white);
 
+  font-family: inherit;
+
   font-size: 14px;
+
   font-weight: 600;
 
   cursor: pointer;
@@ -206,11 +269,17 @@
   box-shadow: var(--shadow-purple);
 }
 
+
+/* ================================
+   PROFILE
+================================ */
+
 .profile-avatar {
   width: 56px;
   height: 56px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -223,12 +292,21 @@
   color: var(--primary);
 
   font-size: 16px;
+
   font-weight: 700;
+
+  flex-shrink: 0;
 }
+
+
+/* ================================
+   SETTING OPTIONS
+================================ */
 
 .setting-option,
 .security-option {
   display: flex;
+
   justify-content: space-between;
   align-items: center;
 
@@ -247,9 +325,12 @@
 .setting-option div,
 .security-option div {
   display: flex;
+
   flex-direction: column;
 
   gap: 4px;
+
+  min-width: 0;
 }
 
 .setting-option strong,
@@ -264,9 +345,20 @@
   font-size: 12px;
 
   color: var(--text-muted);
+
+  line-height: 1.5;
 }
 
+
+/* ================================
+   SECONDARY BUTTON
+================================ */
+
 .secondary-btn {
+  flex-shrink: 0;
+
+  min-height: 34px;
+
   padding: 8px 12px;
 
   border: 1px solid var(--border);
@@ -276,6 +368,8 @@
   background: var(--surface);
 
   color: var(--text);
+
+  font-family: inherit;
 
   font-size: 12px;
 
@@ -294,26 +388,237 @@
   color: var(--primary);
 }
 
-@media (max-width: 750px) {
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
 
   .settings {
-    padding: 20px 16px;
+    padding: 28px 24px;
   }
 
   .settings-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: 190px minmax(0, 1fr);
+
+    gap: 18px;
   }
+
+  .settings-card {
+    padding: 24px;
+  }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 750px) {
+
+  .settings {
+    padding: 22px 16px;
+  }
+
+  .settings-intro {
+    margin-bottom: 22px;
+  }
+
+  .settings-intro h1 {
+    font-size: 24px;
+  }
+
+  .settings-intro p {
+    font-size: 13px;
+  }
+
+
+  /* Stack sidebar above content */
+
+  .settings-layout {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+
+    max-width: none;
+  }
+
+
+  /* Horizontal settings navigation */
 
   .settings-sidebar {
     flex-direction: row;
 
+    width: 100%;
+
+    padding: 6px;
+
     overflow-x: auto;
+
+    overflow-y: hidden;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+  }
+
+  .settings-sidebar::-webkit-scrollbar {
+    display: none;
   }
 
   .settings-sidebar button {
     width: auto;
 
+    min-width: max-content;
+
+    padding: 10px 14px;
+
     white-space: nowrap;
+
+    text-align: center;
   }
 
+
+  /* Settings card */
+
+  .settings-card {
+    padding: 20px;
+
+    border-radius: var(--radius-md);
+  }
+
+  .settings-card-header {
+    margin-bottom: 22px;
+  }
+
+  .settings-card-header h2 {
+    font-size: 17px;
+  }
+
+  .settings-card-header p {
+    font-size: 12px;
+  }
+
+
+  /* Form */
+
+  .form-group {
+    margin-bottom: 17px;
+  }
+
+  .form-group input,
+  .form-group select {
+    min-height: 44px;
+  }
+
+  .save-btn {
+    width: 100%;
+
+    min-height: 44px;
+  }
+
+
+  /* Options */
+
+  .setting-option,
+  .security-option {
+    align-items: flex-start;
+
+    gap: 14px;
+
+    padding: 16px 0;
+  }
+
+}
+
+
+/* ==================================================
+   SMALL PHONES
+================================================== */
+
+@media (max-width: 450px) {
+
+  .settings {
+    padding: 18px 12px;
+  }
+
+  .settings-intro h1 {
+    font-size: 22px;
+  }
+
+  .settings-intro p {
+    font-size: 12px;
+  }
+
+
+  /* Smaller navigation */
+
+  .settings-sidebar {
+    padding: 5px;
+  }
+
+  .settings-sidebar button {
+    padding: 9px 12px;
+
+    font-size: 12px;
+  }
+
+
+  /* Card */
+
+  .settings-card {
+    padding: 16px;
+  }
+
+  .settings-card-header {
+    margin-bottom: 20px;
+  }
+
+  .settings-card-header h2 {
+    font-size: 16px;
+  }
+
+
+  /* Profile */
+
+  .profile-avatar {
+    width: 50px;
+    height: 50px;
+
+    margin-bottom: 20px;
+
+    font-size: 14px;
+  }
+
+
+  /* Setting rows */
+
+  .setting-option,
+  .security-option {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 12px;
+  }
+
+  .secondary-btn {
+    width: 100%;
+
+    min-height: 40px;
+  }
+
+
+  /* Form */
+
+  .form-group label {
+    font-size: 12px;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 13px;
+  }
 }

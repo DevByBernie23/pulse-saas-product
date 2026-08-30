@@ -1,4 +1,4 @@
-import {  homepage } from '../../data/routes';
+
 import './Header.css';
 import { Link } from 'react-router-dom';
 
@@ -6,13 +6,6 @@ const Header = () => {
   return (
     <header className="header">
 
-      <div className="header-brand">
-        <div className="header-logo">
-          P
-        </div>
-
-        <Link to={homepage}><span>Pulse</span></Link>
-      </div>
 
       <div className="header-page">
         <h2>Overview</h2>

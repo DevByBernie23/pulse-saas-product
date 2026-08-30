@@ -261,3 +261,167 @@
 
   font-size: 14px;
 }
+/* =========================
+   Mobile Header
+========================= */
+
+@media (max-width: 768px) {
+  .header {
+    height: 64px;
+    padding: 0 16px;
+  }
+
+  .header-brand {
+    min-width: auto;
+    gap: 7px;
+  }
+
+  .header-logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+
+  .header-brand span {
+    font-size: 16px;
+  }
+
+  .header-page {
+    margin-left: 16px;
+    padding-left: 16px;
+  }
+
+  .header-page h2 {
+    font-size: 13px;
+  }
+
+  .header-page p {
+    display: none;
+  }
+
+  .header-left {
+    margin-left: auto;
+  }
+
+  .search {
+    width: 170px;
+    height: 36px;
+  }
+
+  .search-shortcut {
+    display: none;
+  }
+
+  .header-right {
+    gap: 8px;
+    margin-left: 10px;
+  }
+
+  .header-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .profile {
+    gap: 6px;
+  }
+
+  .profile-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .profile-info {
+    display: none;
+  }
+
+  .profile-arrow {
+    display: none;
+  }
+}
+
+
+/* Smaller phones */
+
+@media (max-width: 520px) {
+  .header {
+    padding: 0 12px;
+  }
+
+  .header-brand span {
+    display: none;
+  }
+
+  .header-page {
+    margin-left: 12px;
+    padding-left: 12px;
+  }
+
+  .header-page h2 {
+    font-size: 12px;
+  }
+
+  .search {
+    width: 42px;
+    padding: 0;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .search input {
+    display: none;
+  }
+
+  .search-icon {
+    font-size: 19px;
+  }
+
+  .header-right {
+    margin-left: 4px;
+  }
+
+  .header-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+@media (max-width: 600px) {
+  .header {
+    height: 64px;
+    padding: 0 16px;
+  }
+
+  .header-brand {
+    min-width: auto;
+  }
+
+  .header-brand span {
+    display: none;
+  }
+
+  .header-page {
+    margin-left: 16px;
+    padding-left: 16px;
+  }
+
+  .header-page p {
+    display: none;
+  }
+
+  .header-left {
+    display: none;
+  }
+
+  .header-right {
+    margin-left: auto;
+    gap: 8px;
+  }
+
+  .profile-info,
+  .profile-arrow {
+    display: none;
+  }
+}

@@ -1,7 +1,21 @@
 import { transactions } from './../../../../data/data';
 import "./Transactions.css";
+import { useState, useEffect } from 'react';
 
 const Transactions = () => {
+    const [transactions, setTransactions] = useState([]);
+  
+    useEffect(() => {
+      const getTransactions = async () => {
+        const response = await fetch('http://localhost:3000/transactions');
+  
+        const data = await response.json();
+        
+        setTransactions(data);
+      };
+  
+      getTransactions();
+    }, []);
   return (
     <section className="transactions">
       <div className="transactions-header">

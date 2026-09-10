@@ -5,6 +5,7 @@ import Nav from '../../components/Nav/Nav';
 import AnalyticsStats from '../../components/Analytics stats/AnalyticsStats';
 
 const Analytics = () => {
+  
   return (
 
      

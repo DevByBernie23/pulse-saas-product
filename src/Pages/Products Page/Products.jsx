@@ -1,10 +1,20 @@
 import React from 'react';
-import { products } from '../../data/data';
+import { useState, useEffect } from 'react'; 
 import './Products.css';
 import Header from '../../components/Header/Header';
 import Nav from '../../components/Nav/Nav';
 
 const Products = () => {
+   const [products, setProductsData] = useState([])
+       useEffect(() => {
+        const getProducts = async () => {
+          const response = await fetch('http://localhost:3000/products');
+    
+          const data = await response.json();
+          setProductsData(data);
+        };
+        getProducts();
+      }, []);
   return (
     <div>
        <div className="app">

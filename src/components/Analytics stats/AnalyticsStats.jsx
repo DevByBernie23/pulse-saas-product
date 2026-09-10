@@ -1,9 +1,23 @@
 import React from 'react';
 import '../../Pages/Analytics Page/Analytics.css'
-import { analyticsStats } from '../../data/data';
+import { useState, useEffect } from 'react';
 import StatCard from '../../Pages/Overview Page/overview elements/StatCard/StatCard';
 
 const AnalyticsStats = () => {
+
+    const [analyticsStats, setAnalyticsStats] = useState([]);
+  
+    useEffect(() => {
+      const getAnalyticsStats = async () => {
+        const response = await fetch('http://localhost:3000/analyticsStats');
+  
+        const data = await response.json();
+        
+        setAnalyticsStats(data);
+      };
+  
+      getAnalyticsStats();
+    }, []);
   return (
     <div>
         <section className="analytics-intro">

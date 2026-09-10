@@ -1,10 +1,60 @@
 import React from 'react';
 import './Orders.css';
-import { orders } from '../../data/data';
+import { useState, useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import Nav from '../../components/Nav/Nav';
 
 const Orders = () => {
+   const [orders, setOrdersData] = useState([])
+   const [loading, setLoading] = useState(true);
+   const [error, setError] = useState(null);
+       useEffect(() => {
+        const getOrdersData = async () => {
+          setLoading(true)
+          try{
+            const response = await fetch('http://localhost:3000/orders');
+            if (!response.ok) {
+          throw new Error('Failed to fetch revenue data');
+            }
+        const data = await response.json();
+
+        console.log('Orders:', data);
+        setOrdersData(data);
+      } catch (error) {
+        console.error('Order error:', error);
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+    
+    getOrdersData();
+  }, []);
+
+  if (loading) {
+    return (
+      <section className="revenue-card">
+        <h2>Loading orders...</h2>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="revenue-card">
+        <h2>Something went wrong</h2>
+        <p>{error}</p>
+      </section>
+    );
+  }
+if (orders.length === 0) {
+  return (
+    <section className="revenue-card">
+      <h2>No customer data</h2>
+      <p>There is currently no currently data to display.</p>
+    </section>
+  );
+}
   return (
      <div>
        <div className="app">

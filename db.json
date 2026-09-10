@@ -1,0 +1,521 @@
+{
+  "stats": [
+    {
+      "id": "1",
+      "title": "Total Revenue",
+      "value": "$84,250",
+      "change": "+18.4%",
+      "comparison": "vs. last month",
+      "trend": "up"
+    },
+    {
+      "id": "2",
+      "title": "Total Customers",
+      "value": "12,430",
+      "change": "+9.2%",
+      "comparison": "vs. last month",
+      "trend": "up"
+    },
+    {
+      "id": "3",
+      "title": "Total Orders",
+      "value": "2,841",
+      "change": "+12.8%",
+      "comparison": "vs. last month",
+      "trend": "up"
+    },
+    {
+      "id": "4",
+      "title": "Conversion Rate",
+      "value": "8.42%",
+      "change": "+2.4%",
+      "comparison": "vs. last month",
+      "trend": "up"
+    }
+  ],
+  "revenueData": [
+    {
+      "id": "1",
+      "date": "Aug 01",
+      "revenue": 2100
+    },
+    {
+      "id": "2",
+      "date": "Aug 03",
+      "revenue": 2800
+    },
+    {
+      "id": "3",
+      "date": "Aug 05",
+      "revenue": 2400
+    },
+    {
+      "id": "4",
+      "date": "Aug 07",
+      "revenue": 3900
+    },
+    {
+      "id": "5",
+      "date": "Aug 09",
+      "revenue": 3500
+    },
+    {
+      "id": "6",
+      "date": "Aug 11",
+      "revenue": 4200
+    },
+    {
+      "id": "7",
+      "date": "Aug 13",
+      "revenue": 5100
+    },
+    {
+      "id": "8",
+      "date": "Aug 15",
+      "revenue": 4700
+    },
+    {
+      "id": "9",
+      "date": "Aug 17",
+      "revenue": 5800
+    },
+    {
+      "id": "10",
+      "date": "Aug 19",
+      "revenue": 6200
+    },
+    {
+      "id": "11",
+      "date": "Aug 21",
+      "revenue": 5900
+    },
+    {
+      "id": "12",
+      "date": "Aug 23",
+      "revenue": 6800
+    },
+    {
+      "id": "13",
+      "date": "Aug 25",
+      "revenue": 7200
+    },
+    {
+      "id": "14",
+      "date": "Aug 27",
+      "revenue": 8100
+    },
+    {
+      "id": "15",
+      "date": "Aug 29",
+      "revenue": 7600
+    },
+    {
+      "id": "16",
+      "date": "Aug 31",
+      "revenue": 8250
+    }
+  ],
+  "recentActivity": [
+    {
+      "id": "1",
+      "type": "upgrade",
+      "user": "Olivia Martin",
+      "description": "upgraded to the Business Plan",
+      "time": "12 minutes ago"
+    },
+    {
+      "id": "2",
+      "type": "order",
+      "user": "James Wilson",
+      "description": "placed an order for $499",
+      "time": "34 minutes ago"
+    },
+    {
+      "id": "3",
+      "type": "customer",
+      "user": "Sophia Brown",
+      "description": "created a new account",
+      "time": "1 hour ago"
+    },
+    {
+      "id": "4",
+      "type": "payment",
+      "user": "Daniel Anderson",
+      "description": "completed a payment of $249",
+      "time": "2 hours ago"
+    },
+    {
+      "id": "5",
+      "type": "subscription",
+      "user": "Emma Davis",
+      "description": "cancelled her subscription",
+      "time": "3 hours ago"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "#1024",
+      "customer": "Olivia Martin",
+      "product": "Pro Plan",
+      "amount": 249,
+      "status": "Completed",
+      "date": "Aug 4, 2026"
+    },
+    {
+      "id": "#1023",
+      "customer": "James Wilson",
+      "product": "Business Plan",
+      "amount": 499,
+      "status": "Completed",
+      "date": "Aug 4, 2026"
+    },
+    {
+      "id": "#1022",
+      "customer": "Sophia Brown",
+      "product": "Pro Plan",
+      "amount": 249,
+      "status": "Pending",
+      "date": "Aug 3, 2026"
+    },
+    {
+      "id": "#1021",
+      "customer": "Daniel Anderson",
+      "product": "Starter Plan",
+      "amount": 99,
+      "status": "Completed",
+      "date": "Aug 3, 2026"
+    },
+    {
+      "id": "#1020",
+      "customer": "Emma Davis",
+      "product": "Business Plan",
+      "amount": 499,
+      "status": "Failed",
+      "date": "Aug 2, 2026"
+    },
+    {
+      "id": "#1019",
+      "customer": "Michael Brown",
+      "product": "Pro Plan",
+      "amount": 249,
+      "status": "Completed",
+      "date": "Aug 2, 2026"
+    }
+  ],
+  "overviewData": [
+    {
+      "id": "1",
+      "dateRange": "Aug 1 - Aug 31, 2026",
+      "totalRevenue": 84250,
+      "revenueChange": 18.4,
+      "totalCustomers": 12430,
+      "customerChange": 9.2,
+      "totalOrders": 2841,
+      "orderChange": 12.8,
+      "conversionRate": 8.42,
+      "conversionChange": 2.4
+    }
+  ],
+  "analyticsStats": [
+    {
+      "id": "1",
+      "title": "Total Revenue",
+      "value": "$84,250",
+      "change": "+18.4%",
+      "comparison": "vs. previous period"
+    },
+    {
+      "id": "2",
+      "title": "Customers",
+      "value": "12,430",
+      "change": "+9.2%",
+      "comparison": "vs. previous period"
+    },
+    {
+      "id": "3",
+      "title": "Orders",
+      "value": "2,841",
+      "change": "+12.8%",
+      "comparison": "vs. previous period"
+    },
+    {
+      "id": "4",
+      "title": "Conversion Rate",
+      "value": "8.42%",
+      "change": "+2.4%",
+      "comparison": "vs. previous period"
+    }
+  ],
+  "customers": [
+  {
+    "id": "1",
+    "name": "James Collins",
+    "email": "jamescollins@email.com",
+    "status": "Active",
+    "spent": 840,
+    "joined": "Aug 12, 2026",
+    "userId": "5mkx4CsrG5E"
+  },
+  {
+    "id": "2",
+    "name": "Ibiwoye Samson",
+    "email": "ibiwoyesamson@email.com",
+    "status": "Active",
+    "spent": 620,
+    "joined": "Aug 10, 2026",
+    "userId": "5mkx4CsrG5E"
+  },
+  {
+    "id": "3",
+    "name": "Michelle Sammy",
+    "email": "michellesammy@email.com",
+    "status": "Inactive",
+    "spent": 320,
+    "joined": "Jul 28, 2026",
+    "userId": "ZQMP_mMmyTc"
+  },
+  {
+    "id": "4",
+    "name": "Grace Joseph",
+    "email": "gracejoseph@email.com",
+    "status": "Active",
+    "spent": 1240,
+    "joined": "Jul 24, 2026",
+    "userId": "ZQMP_mMmyTc"
+  },
+  {
+    "id": "5",
+    "name": "Matthew Praise",
+    "email": "praisematthew@email.com",
+    "status": "Active",
+    "spent": 560,
+    "joined": "Jul 20, 2026",
+    "userId": "PdlYG-33gUU"
+  },
+  {
+    "id": "6",
+    "name": "Olivia Daniella",
+    "email": "oliviadaniella@email.com",
+    "status": "Inactive",
+    "spent": 410,
+    "joined": "Jul 18, 2026",
+    "userId": "PdlYG-33gUU"
+  },
+  {
+    "id": "7",
+    "name": "Daniel Emmanuel",
+    "email": "danielemmanuel@email.com",
+    "status": "Active",
+    "spent": 920,
+    "joined": "Jul 15, 2026",
+    "userId": "5mkx4CsrG5E"
+  },
+  {
+    "id": "8",
+    "name": "Roberto Paul",
+    "email": "robertopaul@email.com",
+    "status": "Active",
+    "spent": 730,
+    "joined": "Jul 11, 2026",
+    "userId": "ZQMP_mMmyTc"
+  },
+  {
+    "id": "9",
+    "name": "Sunday John",
+    "email": "sndayoo@gmail.com",
+    "status": "Active",
+    "spent": 0,
+    "joined": "2026-09-10",
+    "userId": "PdlYG-33gUU"
+  },
+  {
+    "id": "10",
+    "name": "Joel",
+    "email": "joel@gmail.com",
+    "status": "Active",
+    "spent": 0,
+    "joined": "2026-09-10",
+    "userId": "5mkx4CsrG5E"
+  }
+],
+  "orders": [
+    {
+      "id": "ORD-1042",
+      "customer": "James Collins",
+      "email": "jamescollins@email.com",
+      "amount": 240,
+      "status": "Completed",
+      "date": "Aug 12, 2026",
+      "payment": "Paid"
+    },
+    {
+      "id": "ORD-1041",
+      "customer": "Ibiwoye Samson",
+      "email": "ibiwoyesamson@email.com",
+      "amount": 120,
+      "status": "Processing",
+      "date": "Aug 12, 2026",
+      "payment": "Paid"
+    },
+    {
+      "id": "ORD-1040",
+      "customer": "Michelle Sammy",
+      "email": "michellesammy@email.com",
+      "amount": 580,
+      "status": "Completed",
+      "date": "Aug 11, 2026",
+      "payment": "Paid"
+    },
+    {
+      "id": "ORD-1039",
+      "customer": "Grace Joseph",
+      "email": "gracejoseph@email.com",
+      "amount": 85,
+      "status": "Pending",
+      "date": "Aug 11, 2026",
+      "payment": "Pending"
+    },
+    {
+      "id": "ORD-1038",
+      "customer": "Matthew Praise",
+      "email": "matthewpraise@email.com",
+      "amount": 320,
+      "status": "Cancelled",
+      "date": "Aug 10, 2026",
+      "payment": "Refunded"
+    },
+    {
+      "id": "ORD-1037",
+      "customer": "Olivia Daniella",
+      "email": "oliviadaniella@email.com",
+      "amount": 760,
+      "status": "Completed",
+      "date": "Aug 10, 2026",
+      "payment": "Paid"
+    },
+    {
+      "id": "ORD-1036",
+      "customer": "James Collins",
+      "email": "jamescollins@email.com",
+      "amount": 190,
+      "status": "Processing",
+      "date": "Aug 9, 2026",
+      "payment": "Paid"
+    }
+  ],
+  "users": [
+    {
+      "firstName": "David",
+      "lastName": "Daniel",
+      "email": "daviddaniel@gmail.com",
+      "password": "beloved",
+      "id": "5mkx4CsrG5E"
+    },
+    {
+      "firstName": "joshua",
+      "lastName": "sunday",
+      "email": "joshuasundayl@gmail.com",
+      "password": "belovedd",
+      "id": "ZQMP_mMmyTc"
+    },
+    {
+      "firstName": "precious",
+      "lastName": "ojo",
+      "email": "preciousojo@gmail.com",
+      "password": "beloved888",
+      "id": "PdlYG-33gUU"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Starter Plan",
+      "category": "Subscription",
+      "price": 19,
+      "stock": 84,
+      "status": "Active"
+    },
+    {
+      "id": "2",
+      "name": "Professional Plan",
+      "category": "Subscription",
+      "price": 49,
+      "stock": 126,
+      "status": "Active"
+    },
+    {
+      "id": "3",
+      "name": "Business Plan",
+      "category": "Subscription",
+      "price": 99,
+      "stock": 72,
+      "status": "Active"
+    },
+    {
+      "id": "4",
+      "name": "Enterprise Plan",
+      "category": "Subscription",
+      "price": 199,
+      "stock": 24,
+      "status": "Active"
+    },
+    {
+      "id": "5",
+      "name": "Analytics Add-on",
+      "category": "Add-on",
+      "price": 29,
+      "stock": 43,
+      "status": "Active"
+    },
+    {
+      "id": "6",
+      "name": "Priority Support",
+      "category": "Add-on",
+      "price": 15,
+      "stock": 0,
+      "status": "Out of Stock"
+    },
+    {
+      "id": "7",
+      "name": "Team Package",
+      "category": "Subscription",
+      "price": 149,
+      "stock": 18,
+      "status": "Active"
+    },
+    {
+      "id": "8",
+      "name": "API Access",
+      "category": "Add-on",
+      "price": 39,
+      "stock": 0,
+      "status": "Out of Stock"
+    }
+  ],
+  "billingHistory": [
+    {
+      "id": "INV-001",
+      "date": "Aug 01, 2026",
+      "amount": 49,
+      "status": "Paid"
+    },
+    {
+      "id": "INV-002",
+      "date": "Jul 01, 2026",
+      "amount": 49,
+      "status": "Paid"
+    },
+    {
+      "id": "INV-003",
+      "date": "Jun 01, 2026",
+      "amount": 49,
+      "status": "Paid"
+    },
+    {
+      "id": "INV-004",
+      "date": "May 01, 2026",
+      "amount": 49,
+      "status": "Paid"
+    }
+  ]
+}

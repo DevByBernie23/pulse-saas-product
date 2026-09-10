@@ -1,11 +1,27 @@
 
 import React from 'react';
 import './Billing.css';
-import { billingHistory } from '../../data/data';
+import { useState, useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import Nav from '../../components/Nav/Nav';
 
 const Billing = () => {
+   const [billingHistory, setBillingHistory] = useState([])
+   const [loading, setLoading] = useState(true)
+       useEffect(() => {
+        const getBillingHistory = async () => {
+          setLoading(true)
+
+          await new Promise((resolve) => setTimeout(resolve, 2000));
+          const response = await fetch('http://localhost:3000/billingHistory');
+    
+          const data = await response.json();
+          
+          setBillingHistory(data);
+          setLoading(false)
+        };
+        getBillingHistory();
+      }, []);
   return (
      <div>
        <div className="app">

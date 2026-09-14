@@ -2,6 +2,7 @@ import { Link, useNavigate} from 'react-router-dom';
 import './SignIn.css';
 import { useState } from 'react';
 import { z } from 'zod'
+import { getstarted } from '../../data/routes';
 
 
 const SignIn = () => {
@@ -132,7 +133,7 @@ navigate('/overview');
 
           <p className="signup-text">
             Don't have an account?
-            <Link to="/get-started"> Get started</Link>
+            <Link to={getstarted}> Get started</Link>
           </p>
 
         </form>

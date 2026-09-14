@@ -11,7 +11,7 @@ import { useState } from 'react';
     return savedUser ? JSON.parse(savedUser) : null;
   });
 console.log('Header user:', currentUser);
-
+ 
   return (
     <header className="header">
 

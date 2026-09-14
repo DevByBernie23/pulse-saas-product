@@ -9,7 +9,9 @@ import {
 } from 'recharts';
 
 import './RevenueChart.css';
+
 import { useEffect, useState } from 'react';
+
 
 const RevenueChart = () => {
   const [loading, setLoading] = useState(true);
@@ -58,10 +60,11 @@ const RevenueChart = () => {
       <section className="revenue-card">
         <h2>Something went wrong</h2>
         <p>{error}</p>
+        <p>This project uses JSON Server as a mock backend, so the full API-driven functionality is available when running the project locally.</p>
       </section>
     );
   }
-  if (revenueData.length === 0) {
+if (revenueData.length === 0) {
   return (
     <section className="revenue-card">
       <h2>No revenue data</h2>
@@ -69,7 +72,6 @@ const RevenueChart = () => {
     </section>
   );
 }
-
   return (
     <section className="revenue-card">
 

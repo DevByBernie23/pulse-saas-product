@@ -235,7 +235,63 @@
   background: var(--surface-muted);
   color: var(--text-muted);
 }
+/* ========================================
+   CUSTOMER ACTIONS
+======================================== */
 
+.customer-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.customer-actions button {
+  min-height: 32px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* Edit */
+
+.edit-customer-btn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.edit-customer-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-soft);
+}
+
+/* Delete */
+
+.delete-customer-btn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+}
+
+.delete-customer-btn:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+  background: var(--danger-bg);
+}
+.form-error {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--danger);
+}
+.add-customer-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 
 /* ========================================
    TABLET

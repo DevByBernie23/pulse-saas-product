@@ -60,6 +60,7 @@ const RevenueChart = () => {
       <section className="revenue-card">
         <h2>Something went wrong</h2>
         <p>{error}</p>
+        <p>This project uses JSON Server as a mock backend, so the full API-driven functionality is available when running the project locally.</p>
       </section>
     );
   }

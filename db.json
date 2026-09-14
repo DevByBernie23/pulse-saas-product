@@ -247,97 +247,95 @@
     }
   ],
   "customers": [
-  {
-    "id": "1",
-    "name": "James Collins",
-    "email": "jamescollins@email.com",
-    "status": "Active",
-    "spent": 840,
-    "joined": "Aug 12, 2026",
-    "userId": "5mkx4CsrG5E"
-  },
-  {
-    "id": "2",
-    "name": "Ibiwoye Samson",
-    "email": "ibiwoyesamson@email.com",
-    "status": "Active",
-    "spent": 620,
-    "joined": "Aug 10, 2026",
-    "userId": "5mkx4CsrG5E"
-  },
-  {
-    "id": "3",
-    "name": "Michelle Sammy",
-    "email": "michellesammy@email.com",
-    "status": "Inactive",
-    "spent": 320,
-    "joined": "Jul 28, 2026",
-    "userId": "ZQMP_mMmyTc"
-  },
-  {
-    "id": "4",
-    "name": "Grace Joseph",
-    "email": "gracejoseph@email.com",
-    "status": "Active",
-    "spent": 1240,
-    "joined": "Jul 24, 2026",
-    "userId": "ZQMP_mMmyTc"
-  },
-  {
-    "id": "5",
-    "name": "Matthew Praise",
-    "email": "praisematthew@email.com",
-    "status": "Active",
-    "spent": 560,
-    "joined": "Jul 20, 2026",
-    "userId": "PdlYG-33gUU"
-  },
-  {
-    "id": "6",
-    "name": "Olivia Daniella",
-    "email": "oliviadaniella@email.com",
-    "status": "Inactive",
-    "spent": 410,
-    "joined": "Jul 18, 2026",
-    "userId": "PdlYG-33gUU"
-  },
-  {
-    "id": "7",
-    "name": "Daniel Emmanuel",
-    "email": "danielemmanuel@email.com",
-    "status": "Active",
-    "spent": 920,
-    "joined": "Jul 15, 2026",
-    "userId": "5mkx4CsrG5E"
-  },
-  {
-    "id": "8",
-    "name": "Roberto Paul",
-    "email": "robertopaul@email.com",
-    "status": "Active",
-    "spent": 730,
-    "joined": "Jul 11, 2026",
-    "userId": "ZQMP_mMmyTc"
-  },
-  {
-    "id": "9",
-    "name": "Sunday John",
-    "email": "sndayoo@gmail.com",
-    "status": "Active",
-    "spent": 0,
-    "joined": "2026-09-10",
-    "userId": "PdlYG-33gUU"
-  },
-  {
-    "id": "10",
-    "name": "Joel",
-    "email": "joel@gmail.com",
-    "status": "Active",
-    "spent": 0,
-    "joined": "2026-09-10",
-    "userId": "5mkx4CsrG5E"
-  }
-],
+    {
+      "id": "3",
+      "name": "Michelle Sammy",
+      "email": "michellesammy@email.com",
+      "status": "Inactive",
+      "spent": 320,
+      "joined": "Jul 28, 2026",
+      "userId": "ZQMP_mMmyTc"
+    },
+    {
+      "id": "4",
+      "name": "Grace Joseph",
+      "email": "gracejoseph@email.com",
+      "status": "Active",
+      "spent": 1240,
+      "joined": "Jul 24, 2026",
+      "userId": "ZQMP_mMmyTc"
+    },
+    {
+      "id": "5",
+      "name": "Matthew Praise",
+      "email": "praisematthew@email.com",
+      "status": "Active",
+      "spent": 560,
+      "joined": "Jul 20, 2026",
+      "userId": "PdlYG-33gUU"
+    },
+    {
+      "id": "6",
+      "name": "Olivia Daniella",
+      "email": "oliviadaniella@email.com",
+      "status": "Inactive",
+      "spent": 410,
+      "joined": "Jul 18, 2026",
+      "userId": "PdlYG-33gUU"
+    },
+    {
+      "id": "7",
+      "name": "Daniel Emmanuel",
+      "email": "danielemmanuel@email.com",
+      "status": "Active",
+      "spent": 920,
+      "joined": "Jul 15, 2026",
+      "userId": "5mkx4CsrG5E"
+    },
+    {
+      "id": "8",
+      "name": "Roberto Paul",
+      "email": "robertopaul@email.com",
+      "status": "Active",
+      "spent": 730,
+      "joined": "Jul 11, 2026",
+      "userId": "ZQMP_mMmyTc"
+    },
+    {
+      "id": "9",
+      "name": "Sunday John",
+      "email": "sndayoo@gmail.com",
+      "status": "Active",
+      "spent": 0,
+      "joined": "2026-09-10",
+      "userId": "PdlYG-33gUU"
+    },
+    {
+      "id": "10",
+      "name": "Joel",
+      "email": "joel@gmail.com",
+      "status": "Active",
+      "spent": 0,
+      "joined": "2026-09-10",
+      "userId": "5mkx4CsrG5E"
+    },
+    {
+      "name": "Clinton John",
+      "email": "clintonjohn@gmail.com",
+      "status": "Active",
+      "spent": 0,
+      "joined": "2026-09-11",
+      "id": "PptBKG5bZQU"
+    },
+    {
+      "name": "Deborah Sunday",
+      "email": "deborahsunday@gmail.com",
+      "status": "Active",
+      "spent": 0,
+      "joined": "2026-09-11",
+      "id": "jp1Nk4pIT18"
+    }
+  ],
   "orders": [
     {
       "id": "ORD-1042",
@@ -346,16 +344,27 @@
       "amount": 240,
       "status": "Completed",
       "date": "Aug 12, 2026",
-      "payment": "Paid"
+      "payment": "Paid",
+      "paymentMethod": "Card",
+      "transactionId": "TXN-1042",
+      "refund": null
     },
     {
       "id": "ORD-1041",
       "customer": "Ibiwoye Samson",
       "email": "ibiwoyesamson@email.com",
       "amount": 120,
-      "status": "Processing",
+      "status": "Cancelled",
       "date": "Aug 12, 2026",
-      "payment": "Paid"
+      "payment": "Refunded",
+      "paymentMethod": "Card",
+      "transactionId": "TXN-1041",
+      "refund": {
+        "amount": 120,
+        "status": "Completed",
+        "date": "Sep 13, 2026",
+        "reason": "Customer requested cancellation"
+      }
     },
     {
       "id": "ORD-1040",
@@ -364,16 +373,27 @@
       "amount": 580,
       "status": "Completed",
       "date": "Aug 11, 2026",
-      "payment": "Paid"
+      "payment": "Paid",
+      "paymentMethod": "Bank Transfer",
+      "transactionId": "TXN-1040",
+      "refund": null
     },
     {
       "id": "ORD-1039",
       "customer": "Grace Joseph",
       "email": "gracejoseph@email.com",
       "amount": 85,
-      "status": "Pending",
+      "status": "Cancelled",
       "date": "Aug 11, 2026",
-      "payment": "Pending"
+      "payment": "Refunded",
+      "paymentMethod": null,
+      "transactionId": null,
+      "refund": {
+        "amount": 85,
+        "status": "Completed",
+        "date": "Sep 12, 2026",
+        "reason": "Customer requested cancellation"
+      }
     },
     {
       "id": "ORD-1038",
@@ -382,7 +402,15 @@
       "amount": 320,
       "status": "Cancelled",
       "date": "Aug 10, 2026",
-      "payment": "Refunded"
+      "payment": "Refunded",
+      "paymentMethod": "Card",
+      "transactionId": "TXN-1038",
+      "refund": {
+        "amount": 320,
+        "status": "Completed",
+        "date": "Aug 12, 2026",
+        "reason": "Customer requested cancellation"
+      }
     },
     {
       "id": "ORD-1037",
@@ -391,7 +419,10 @@
       "amount": 760,
       "status": "Completed",
       "date": "Aug 10, 2026",
-      "payment": "Paid"
+      "payment": "Paid",
+      "paymentMethod": "Card",
+      "transactionId": "TXN-1037",
+      "refund": null
     },
     {
       "id": "ORD-1036",
@@ -400,7 +431,10 @@
       "amount": 190,
       "status": "Processing",
       "date": "Aug 9, 2026",
-      "payment": "Paid"
+      "payment": "Paid",
+      "paymentMethod": "Bank Transfer",
+      "transactionId": "TXN-1036",
+      "refund": null
     }
   ],
   "users": [
@@ -424,6 +458,13 @@
       "email": "preciousojo@gmail.com",
       "password": "beloved888",
       "id": "PdlYG-33gUU"
+    },
+    {
+      "firstName": "Bernice",
+      "lastName": "Ojo",
+      "email": "ojobernice14@gmail.com",
+      "password": "Bellaza1234$",
+      "id": "oY_wmBie7Dc"
     }
   ],
   "products": [
@@ -490,6 +531,14 @@
       "price": 39,
       "stock": 0,
       "status": "Out of Stock"
+    },
+    {
+      "name": "stand",
+      "category": "stand",
+      "status": "Active",
+      "stock": 40,
+      "price": 40,
+      "id": "ldIHpqu8UdQ"
     }
   ],
   "billingHistory": [
@@ -517,5 +566,6 @@
       "amount": 49,
       "status": "Paid"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

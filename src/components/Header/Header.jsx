@@ -1,6 +1,6 @@
 
 import { useUser } from '../../context/userContext';
-import { useWorkspace } from '../../context/WorkSpaceContext';
+import { useWorkspace } from '../../context/WorkspaceContext';
 import { useEffect, useState } from 'react';
 import {
   customers as customersRoute,

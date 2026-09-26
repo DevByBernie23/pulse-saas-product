@@ -2,7 +2,7 @@ import React from 'react';
 import '../../Pages/Analytics Page/Analytics.css';
 import { useState, useEffect } from 'react';
 import StatCard from '../../Pages/Overview Page/overview elements/StatCard/StatCard';
-import { useWorkspace } from '../../context/WorkSpaceContext';
+import { useWorkspace } from '../../context/WorkspaceContext';
 
 const AnalyticsStats = () => {
     const { workspace } = useWorkspace()

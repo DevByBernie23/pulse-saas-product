@@ -11,7 +11,7 @@ import {
 import './RevenueChart.css';
 
 import { useEffect, useState } from 'react';
-import { useWorkspace } from '../../../../context/WorkSpaceContext';
+import { useWorkspace } from '../../../../context/WorkspaceContext';
 
 
 const RevenueChart = () => {

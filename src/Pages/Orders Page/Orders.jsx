@@ -1,6 +1,6 @@
 import React from 'react';
 import './Orders.css';
-import { useWorkspace } from '../../context/WorkSpaceContext';
+import { useWorkspace } from '../../context/WorkspaceContext';
 import { useState, useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import Nav from '../../components/Nav/Nav';

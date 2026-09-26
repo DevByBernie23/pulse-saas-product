@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import Header from '../../components/Header/Header';
 import Nav from '../../components/Nav/Nav';
 import { z } from 'zod'
-import { useWorkspace } from '../../context/WorkSpaceContext';
+import { useWorkspace } from '../../context/WorkspaceContext';
 
 
 const Customers = () => {

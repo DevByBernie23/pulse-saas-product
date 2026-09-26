@@ -15,8 +15,9 @@ import SignIn from './Pages/SignInPage/SignIn';
 import AnalyticsStats from './components/Analytics stats/AnalyticsStats';
 import { ThemeProvider } from './context/ThemeContext';
 import { LanguageProvider } from './context/LanguageContext';
-import { WorkspaceProvider } from './context/WorkSpaceContext';
+
 import { UserProvider } from './context/userContext';
+import { WorkspaceProvider } from './context/WorkspaceContext';
 
 const App = () => {
   return (
@@ -44,6 +45,7 @@ const App = () => {
       
     </ThemeProvider>
     </WorkspaceProvider>
+    
    
   )
 };

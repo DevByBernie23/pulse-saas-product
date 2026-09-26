@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { useWorkspace } from "../../../../context/WorkSpaceContext";
+import { useWorkspace } from "../../../../context/WorkspaceContext";
 import "./Transactions.css";
 import { useState, useEffect } from 'react';
 import { customerOrders } from "../../../../data/routes";

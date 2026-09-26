@@ -5,7 +5,7 @@ import StatCard from '../../Pages/Overview Page/overview elements/StatCard/StatC
 import Transactions from '../../Pages/Overview Page/overview elements/Transactions/Transactions'
 import Dashboard from '../../Elements/Dashboard.jsx';
 import RevenueChart from '../../Pages/Overview Page/overview elements/RevenueChart/RevenueChart';
-import { useWorkspace } from '../../context/WorkSpaceContext.jsx';
+import { useWorkspace } from '../../context/WorkspaceContext.jsx';
 
 console.log('Hero rendered')
 const Hero = () => {

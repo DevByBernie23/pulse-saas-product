@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useWorkspace } from '../../../context/WorkSpaceContext';
+import { useWorkspace } from '../../../context/WorkspaceContext';
 
 const WorkspaceSettings = () => {
 

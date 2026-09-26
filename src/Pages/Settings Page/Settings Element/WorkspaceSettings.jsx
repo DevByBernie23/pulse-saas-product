@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { useWorkspace } from '../../../context/WorkSpaceContext';
 
 const WorkspaceSettings = () => {
 
-  const [workspaceName, setWorkspaceName] = useState('Pulse Workspace');
+  const {workspace, setWorkspace, saveWorkspace, workspaceName, loading } = useWorkspace()
 
   return (
     <div className="settings-card">
@@ -24,12 +25,12 @@ const WorkspaceSettings = () => {
         <input
           type="text"
           value={workspaceName}
-          onChange={(e) => setWorkspaceName(e.target.value)}
+          onChange={(e) => setWorkspace(e.target.value)}
         />
 
       </div>
 
-      <button className="save-btn">
+      <button className="save-btn" onClick={saveWorkspace}>
         Save Changes
       </button>
 

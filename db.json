@@ -1,4 +1,11 @@
 {
+  "workspaces": [
+    {
+      "id": "workspace-1",
+      "name": "David's Store",
+      "ownerId": "5mkx4CsrG5E"
+    }
+  ],
   "stats": [
     {
       "id": "1",
@@ -254,7 +261,8 @@
       "status": "Inactive",
       "spent": 320,
       "joined": "Jul 28, 2026",
-      "userId": "ZQMP_mMmyTc"
+      "userId": "ZQMP_mMmyTc",
+      "workspaceId": "workspace-1"
     },
     {
       "id": "4",
@@ -263,7 +271,8 @@
       "status": "Active",
       "spent": 1240,
       "joined": "Jul 24, 2026",
-      "userId": "ZQMP_mMmyTc"
+      "userId": "ZQMP_mMmyTc",
+      "workspaceId": "workspace-1"
     },
     {
       "id": "5",
@@ -272,7 +281,8 @@
       "status": "Active",
       "spent": 560,
       "joined": "Jul 20, 2026",
-      "userId": "PdlYG-33gUU"
+      "userId": "PdlYG-33gUU",
+      "workspaceId": "workspace-1"
     },
     {
       "id": "6",
@@ -281,7 +291,8 @@
       "status": "Inactive",
       "spent": 410,
       "joined": "Jul 18, 2026",
-      "userId": "PdlYG-33gUU"
+      "userId": "PdlYG-33gUU",
+      "workspaceId": "workspace-1"
     },
     {
       "id": "7",
@@ -290,7 +301,8 @@
       "status": "Active",
       "spent": 920,
       "joined": "Jul 15, 2026",
-      "userId": "5mkx4CsrG5E"
+      "userId": "5mkx4CsrG5E",
+      "workspaceId": "workspace-1"
     },
     {
       "id": "8",
@@ -299,7 +311,8 @@
       "status": "Active",
       "spent": 730,
       "joined": "Jul 11, 2026",
-      "userId": "ZQMP_mMmyTc"
+      "userId": "ZQMP_mMmyTc",
+      "workspaceId": "workspace-1"
     },
     {
       "id": "9",
@@ -308,7 +321,8 @@
       "status": "Active",
       "spent": 0,
       "joined": "2026-09-10",
-      "userId": "PdlYG-33gUU"
+      "userId": "PdlYG-33gUU",
+      "workspaceId": "workspace-1"
     },
     {
       "id": "10",
@@ -317,7 +331,8 @@
       "status": "Active",
       "spent": 0,
       "joined": "2026-09-10",
-      "userId": "5mkx4CsrG5E"
+      "userId": "5mkx4CsrG5E",
+      "workspaceId": "workspace-1"
     },
     {
       "name": "Clinton John",
@@ -325,7 +340,8 @@
       "status": "Active",
       "spent": 0,
       "joined": "2026-09-11",
-      "id": "PptBKG5bZQU"
+      "id": "PptBKG5bZQU",
+      "workspaceId": "workspace-1"
     },
     {
       "name": "Deborah Sunday",
@@ -333,7 +349,8 @@
       "status": "Active",
       "spent": 0,
       "joined": "2026-09-11",
-      "id": "jp1Nk4pIT18"
+      "id": "jp1Nk4pIT18",
+      "workspaceId": "workspace-1"
     }
   ],
   "orders": [
@@ -347,7 +364,8 @@
       "payment": "Paid",
       "paymentMethod": "Card",
       "transactionId": "TXN-1042",
-      "refund": null
+      "refund": null,
+      "workspaceId": "workspace-1"
     },
     {
       "id": "ORD-1041",
@@ -363,7 +381,8 @@
         "amount": 120,
         "status": "Completed",
         "date": "Sep 13, 2026",
-        "reason": "Customer requested cancellation"
+        "reason": "Customer requested cancellation",
+        "workspaceId": "workspace-1"
       }
     },
     {
@@ -376,7 +395,8 @@
       "payment": "Paid",
       "paymentMethod": "Bank Transfer",
       "transactionId": "TXN-1040",
-      "refund": null
+      "refund": null,
+      "workspaceId": "workspace-1"
     },
     {
       "id": "ORD-1039",
@@ -393,7 +413,8 @@
         "status": "Completed",
         "date": "Sep 12, 2026",
         "reason": "Customer requested cancellation"
-      }
+      },
+      "workspaceId": "workspace-1"
     },
     {
       "id": "ORD-1038",
@@ -410,7 +431,8 @@
         "status": "Completed",
         "date": "Aug 12, 2026",
         "reason": "Customer requested cancellation"
-      }
+      },
+      "workspaceId": "workspace-1"
     },
     {
       "id": "ORD-1037",
@@ -422,7 +444,8 @@
       "payment": "Paid",
       "paymentMethod": "Card",
       "transactionId": "TXN-1037",
-      "refund": null
+      "refund": null,
+      "workspaceId": "workspace-1"
     },
     {
       "id": "ORD-1036",
@@ -434,137 +457,276 @@
       "payment": "Paid",
       "paymentMethod": "Bank Transfer",
       "transactionId": "TXN-1036",
-      "refund": null
-    }
-  ],
-  "users": [
-    {
-      "firstName": "David",
-      "lastName": "Daniel",
-      "email": "daviddaniel@gmail.com",
-      "password": "beloved",
-      "id": "5mkx4CsrG5E"
-    },
-    {
-      "firstName": "joshua",
-      "lastName": "sunday",
-      "email": "joshuasundayl@gmail.com",
-      "password": "belovedd",
-      "id": "ZQMP_mMmyTc"
-    },
-    {
-      "firstName": "precious",
-      "lastName": "ojo",
-      "email": "preciousojo@gmail.com",
-      "password": "beloved888",
-      "id": "PdlYG-33gUU"
-    },
-    {
-      "firstName": "Bernice",
-      "lastName": "Ojo",
-      "email": "ojobernice14@gmail.com",
-      "password": "Bellaza1234$",
-      "id": "oY_wmBie7Dc"
+      "refund": null,
+      "workspaceId": "workspace-1"
     }
   ],
   "products": [
-    {
-      "id": "1",
-      "name": "Starter Plan",
-      "category": "Subscription",
-      "price": 19,
-      "stock": 84,
-      "status": "Active"
-    },
-    {
-      "id": "2",
-      "name": "Professional Plan",
-      "category": "Subscription",
-      "price": 49,
-      "stock": 126,
-      "status": "Active"
-    },
-    {
-      "id": "3",
-      "name": "Business Plan",
-      "category": "Subscription",
-      "price": 99,
-      "stock": 72,
-      "status": "Active"
-    },
-    {
-      "id": "4",
-      "name": "Enterprise Plan",
-      "category": "Subscription",
-      "price": 199,
-      "stock": 24,
-      "status": "Active"
-    },
-    {
-      "id": "5",
-      "name": "Analytics Add-on",
-      "category": "Add-on",
-      "price": 29,
-      "stock": 43,
-      "status": "Active"
-    },
-    {
-      "id": "6",
-      "name": "Priority Support",
-      "category": "Add-on",
-      "price": 15,
-      "stock": 0,
-      "status": "Out of Stock"
-    },
-    {
-      "id": "7",
-      "name": "Team Package",
-      "category": "Subscription",
-      "price": 149,
-      "stock": 18,
-      "status": "Active"
-    },
-    {
-      "id": "8",
-      "name": "API Access",
-      "category": "Add-on",
-      "price": 39,
-      "stock": 0,
-      "status": "Out of Stock"
-    },
-    {
-      "name": "stand",
-      "category": "stand",
-      "status": "Active",
-      "stock": 40,
-      "price": 40,
-      "id": "ldIHpqu8UdQ"
-    }
-  ],
+  {
+    "id": "PROD-001",
+    "name": "Professional Plan",
+    "category": "Subscription",
+    "status": "Active",
+    "stock": 100,
+    "price": 49,
+    "workspaceId": "workspace-1"
+  },
+  {
+    "id": "PROD-002",
+    "name": "Business Plan",
+    "category": "Subscription",
+    "status": "Active",
+    "stock": 75,
+    "price": 99,
+    "workspaceId": "workspace-1"
+  },
+  {
+    "id": "PROD-003",
+    "name": "Starter Plan",
+    "category": "Subscription",
+    "status": "Active",
+    "stock": 150,
+    "price": 19,
+    "workspaceId": "workspace-1"
+  },
+  {
+    "id": "PROD-004",
+    "name": "Priority Support",
+    "category": "Add-on",
+    "status": "Active",
+    "stock": 40,
+    "price": 15,
+    "workspaceId": "workspace-1"
+  },
+  {
+    "id": "PROD-005",
+    "name": "Advanced Analytics",
+    "category": "Add-on",
+    "status": "Active",
+    "stock": 25,
+    "price": 29,
+    "workspaceId": "workspace-1"
+  },
+  {
+    "id": "PROD-006",
+    "name": "Custom Reports",
+    "category": "Add-on",
+    "status": "Out of Stock",
+    "stock": 0,
+    "price": 35,
+    "workspaceId": "workspace-1"
+  },
+  {
+    "id": "PROD-007",
+    "name": "Team Collaboration",
+    "category": "Add-on",
+    "status": "Active",
+    "stock": 60,
+    "price": 25,
+    "workspaceId": "workspace-1"
+  }
+],
+  "users": [
+  {
+    "id": "5mkx4CsrG5E",
+    "userName": "David Daniel",
+    "email": "daviddaniel@gmail.com",
+    "password": "Pulse1234"
+  },
+  {
+    "id": "ZQMP_mMmyTc",
+    "userName": "Joshua Sunday",
+    "email": "joshuasundayl@gmail.com",
+    "password": "..."
+  },
+  {
+    "id": "PdlYG-33gUU",
+    "userName": "Precious Ojo",
+    "email": "preciousojo@gmail.com",
+    "password": "..."
+  },
+  {
+    "id": "oY_wmBie7Dc",
+    "userName": "Bernice Ojo",
+    "email": "ojobernice14@gmail.com",
+    "password": "..."
+  }
+],
   "billingHistory": [
     {
       "id": "INV-001",
-      "date": "Aug 01, 2026",
-      "amount": 49,
-      "status": "Paid"
+      "invoiceNumber": "INV-001",
+      "billingDate": "Aug 01, 2026",
+      "paymentStatus": "Paid",
+      "customerName": "Pulse Technologies",
+      "billingEmail": "billing@pulsetechnologies.com",
+      "subscriptionPlan": "Professional",
+      "billingPeriod": {
+        "start": "Aug 01, 2026",
+        "end": "Aug 31, 2026"
+      },
+      "amountBeforeTax": 49,
+      "tax": 0,
+      "discount": 0,
+      "totalAmountPaid": 49,
+      "currency": "USD",
+      "paymentMethod": {
+        "type": "Visa",
+        "last4": "4242"
+      },
+      "transactionReference": "TXN-20260801-001"
     },
     {
       "id": "INV-002",
-      "date": "Jul 01, 2026",
-      "amount": 49,
-      "status": "Paid"
+      "invoiceNumber": "INV-002",
+      "billingDate": "Jul 01, 2026",
+      "paymentStatus": "Paid",
+      "customerName": "Pulse Technologies",
+      "billingEmail": "billing@pulsetechnologies.com",
+      "subscriptionPlan": "Professional",
+      "billingPeriod": {
+        "start": "Jul 01, 2026",
+        "end": "Jul 31, 2026"
+      },
+      "amountBeforeTax": 49,
+      "tax": 0,
+      "discount": 0,
+      "totalAmountPaid": 49,
+      "currency": "USD",
+      "paymentMethod": {
+        "type": "Visa",
+        "last4": "4242"
+      },
+      "transactionReference": "TXN-20260701-002"
     },
     {
       "id": "INV-003",
-      "date": "Jun 01, 2026",
-      "amount": 49,
-      "status": "Paid"
+      "invoiceNumber": "INV-003",
+      "billingDate": "Jun 01, 2026",
+      "paymentStatus": "Paid",
+      "customerName": "Pulse Technologies",
+      "billingEmail": "billing@pulsetechnologies.com",
+      "subscriptionPlan": "Professional",
+      "billingPeriod": {
+        "start": "Jun 01, 2026",
+        "end": "Jun 30, 2026"
+      },
+      "amountBeforeTax": 49,
+      "tax": 0,
+      "discount": 0,
+      "totalAmountPaid": 49,
+      "currency": "USD",
+      "paymentMethod": {
+        "type": "Visa",
+        "last4": "4242"
+      },
+      "transactionReference": "TXN-20260601-003"
     },
     {
       "id": "INV-004",
-      "date": "May 01, 2026",
-      "amount": 49,
-      "status": "Paid"
+      "invoiceNumber": "INV-004",
+      "billingDate": "May 01, 2026",
+      "paymentStatus": "Paid",
+      "customerName": "Pulse Technologies",
+      "billingEmail": "billing@pulsetechnologies.com",
+      "subscriptionPlan": "Professional",
+      "billingPeriod": {
+        "start": "May 01, 2026",
+        "end": "May 31, 2026"
+      },
+      "amountBeforeTax": 49,
+      "tax": 0,
+      "discount": 0,
+      "totalAmountPaid": 49,
+      "currency": "USD",
+      "paymentMethod": {
+        "type": "Visa",
+        "last4": "4242"
+      },
+      "transactionReference": "TXN-20260501-004"
+    }
+  ],
+  "paymentMethods": [
+    {
+      "id": "pm-001",
+      "type": "Visa",
+      "last4": "4242",
+      "expiryMonth": "08",
+      "expiryYear": "28",
+      "isDefault": true,
+      "status": "active"
+    },
+    {
+      "cardNumber": "22334455661",
+      "cardCvv": "444",
+      "expiryDate": "34493-03",
+      "id": "0kjn-hfB5CI"
+    },
+    {
+      "cardNumber": "22334455661",
+      "cardCvv": "444",
+      "expiryDate": "34493-03",
+      "id": "qGYRMw8eMG0",
+      "type": "Card",
+      "last4": "5661",
+      "expiryMonth": "04",
+      "expiryYear": "29",
+      "isDefault": true,
+      "status": "active"
+    }
+  ],
+  "plans": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "description": "Essential tools for small businesses getting started.",
+      "price": 19,
+      "currency": "USD",
+      "billingCycle": "month",
+      "features": [
+        "Up to 3 projects",
+        "Basic analytics",
+        "Email support",
+        "Customer management",
+        "Product management"
+      ],
+      "popular": false
+    },
+    {
+      "id": "professional",
+      "name": "Professional",
+      "description": "Everything you need to manage your growing business.",
+      "price": 49,
+      "currency": "USD",
+      "billingCycle": "month",
+      "features": [
+        "Unlimited projects",
+        "Advanced analytics",
+        "Team collaboration",
+        "Priority support",
+        "Customer management",
+        "Product management",
+        "Order management"
+      ],
+      "popular": true
+    },
+    {
+      "id": "business",
+      "name": "Business",
+      "description": "Advanced features for established and growing teams.",
+      "price": 99,
+      "currency": "USD",
+      "billingCycle": "month",
+      "features": [
+        "Everything in Professional",
+        "Advanced team permissions",
+        "Custom reports",
+        "Dedicated support",
+        "Priority API access",
+        "Advanced billing controls",
+        "Multiple team workspaces"
+      ],
+      "popular": false
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

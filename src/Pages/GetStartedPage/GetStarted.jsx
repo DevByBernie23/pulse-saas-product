@@ -4,15 +4,16 @@ import { signin } from '../../data/routes';
 import { useState } from 'react';
 import { z } from 'zod';
 
-const GetStarted = () => {
-  const signupValidation = z.object({
+const signupValidation = z.object({
   firstName: z.string().min(1, 'First name is required'),
   lastName: z.string().min(1, 'Last name is required'),
   email: z.string().email('Please enter a valid email'),
   password: z.string().min(6, 'Password must be at least 6 characters'),
 })
- 
+
+const GetStarted = () => {
 const navigate = useNavigate();
+
   const [firstName, setFirstName] = useState('');
 const [lastName, setLastName] = useState('');
 const [email, setEmail] = useState('');
@@ -34,8 +35,8 @@ if (!result.success) {
   return;
 }
 
-console.log('Validation successful:', result.data);
-const response = await fetch('http://localhost:3000/users');
+try{
+ const response = await fetch('http://localhost:3000/users');
 
 if (!response.ok) {
   throw new Error('Failed to check existing users');
@@ -51,29 +52,28 @@ if (emailExists) {
   console.log('An account with this email already exists');
   return;
 }
+
 const newUser = {
-  firstName: firstName.trim(),
-  lastName: lastName.trim(),
+  userName: `${firstName.trim()} ${lastName.trim()}`,
   email: email.trim(),
   password,
 };
 
-try {
-  const response = await fetch('http://localhost:3000/users', {
-    method: 'POST',
+  const createdResponse = await fetch('http://localhost:3000/users', 
+    {
+   method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(newUser),
-  });
+  }
+);
 
-  if (!response.ok) {
+  if (!createdResponse.ok) {
     throw new Error('Failed to create account');
   }
 
-  const createdUser = await response.json();
-
-  console.log('Account created:', createdUser);
+  const createdUser = await createdResponse.json();
   setSuccess(true)
   setTimeout(() => {
   navigate(signin);

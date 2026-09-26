@@ -1,21 +1,32 @@
 import React from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
-import { customerOrders, productsInStore, customers, billing, overview, getstarted, signin } from '../../data/routes';
+import { getstarted, signin } from '../../data/routes';
 import RevenueChart from '../Overview Page/overview elements/RevenueChart/RevenueChart';
-import Analytics from '../Analytics Page/Analytics'
 import AnalyticsStats from '../../components/Analytics stats/AnalyticsStats';
-
+import { useState } from 'react';
 
 const Home = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="home">
 
       {/* Header */}
       <header className="home-header">
-        <h1>Pulse</h1>
+        <Link to="/" className="brand">
+  <img src="/pulse-logo.png" alt="Pulse" />
+  <span>Pulse</span>
+</Link>
+       
+        <button
+  className="menu-toggle"
+  onClick={() => setMenuOpen(!menuOpen)}
+  aria-label="Toggle navigation"
+>
+  ☰
+</button>
 
-        <nav className="header-nav">
+        <nav className={`header-nav ${menuOpen ? 'open' : ''}`}>
           <a href="#features">Features</a>
           <a href="#solutions">Solutions</a>
           <a href="#pricing">Pricing</a>
@@ -46,7 +57,7 @@ const Home = () => {
 
         <div>
           <Link to={getstarted}><button>Get Started</button></Link>
-         <Link to={overview}>View Dashboard</Link>
+         <Link>View Dashboard</Link>
         </div>
 
         {/* Dashboard Preview */}
@@ -158,10 +169,10 @@ const Home = () => {
         </h2>
 
         <div className="growth-links">
-         <Link to={customers}>Customers</Link>
-          <Link to={customerOrders}>Orders</Link>
-          <Link to={productsInStore}>Products</Link>
-          <Link to={billing}>Billing</Link>
+         <Link >Customers</Link>
+          <Link >Orders</Link>
+          <Link >Products</Link>
+          <Link >Billing</Link>
         </div>
 
       </section>

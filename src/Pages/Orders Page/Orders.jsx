@@ -1,5 +1,6 @@
 import React from 'react';
 import './Orders.css';
+import { useWorkspace } from '../../context/WorkSpaceContext';
 import { useState, useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import Nav from '../../components/Nav/Nav';
@@ -14,21 +15,22 @@ const Orders = () => {
     const [selectedOrder, setSelectedOrder] = useState(null);
     const [showCancelModal, setShowCancelModal] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
+    const { workspace } = useWorkspace()
     
 
     const ordersPerPage = 5;
 
        useEffect(() => {
         const getOrdersData = async () => {
+          if (!workspace) return;
           setLoading(true)
           try{
-            const response = await fetch('http://localhost:3000/orders');
+            const response = await fetch(`http://localhost:3000/orders?workspaceId=${workspace.id}`);
             if (!response.ok) {
           throw new Error('Failed to fetch order data');
             }
         const data = await response.json();
 
-        console.log('Orders:', data);
         setOrdersData(data);
       } catch (error) {
         console.error('Order error:', error);
@@ -39,7 +41,7 @@ const Orders = () => {
     }
     
     getOrdersData();
-  }, []);
+  }, [workspace]);
   useEffect(() => {
   setCurrentPage(1);
 }, [searchTerm, statusFilter, dateFilter]);

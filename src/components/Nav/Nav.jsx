@@ -8,19 +8,21 @@ import {
   billing,
   settings
 } from '../../data/routes';
+import { useWorkspace } from '../../context/WorkSpaceContext';
 import { Link } from 'react-router-dom';
 import './Nav.css'
 const Nav = () => {
+   const {workspaceName} = useWorkspace()
   return (
     <nav className="nav">
 
       <div className="nav-logo">
         <div className="nav-logo-mark">
-          P
+          {workspaceName? workspaceName.charAt(0).toUpperCase() : 'P'}
         </div>
 
         <Link to={homepage}>
-          <span>Pulse</span>
+          <span>{workspaceName || 'Your Workspace'}</span>
         </Link>
       </div>
 

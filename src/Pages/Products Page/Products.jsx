@@ -5,7 +5,14 @@ import Header from '../../components/Header/Header';
 import Nav from '../../components/Nav/Nav';
 import {z} from 'zod'
 
-const Products = () => {
+const productValidation = z.object({
+      name: z.string().min(1, 'Name is required'),
+      category: z.string().min(1, 'category is required'),
+      stock: z.number().min(0, 'stock cannot be negative'),
+      price: z.number().min(1, 'price is required')
+    });
+    
+   const Products = () => {
    const [products, setProductsData] = useState([]);
    const [loading, setLoading] = useState(false);
    const [error, setError] = useState(null);
@@ -35,7 +42,7 @@ const Products = () => {
       
         const data = await response.json();
 
-        console.log('Customer data:', data);
+
 
         setProductsData(data);
         }
@@ -80,12 +87,7 @@ const Products = () => {
         </section>
       );
     }
-    const productValidation = z.object({
-      name: z.string().min(1, 'Name is required'),
-      category: z.string().min(1, 'category is required'),
-      stock: z.number().min(1, 'stock is required'),
-      price: z.number().min(1, 'price is required')
-    });
+    
     const addProducts = async () => {
       const result = productValidation.safeParse({
          name: productName.trim(),
@@ -219,7 +221,7 @@ const deleteProduct = async (productId) => {
       )
     );
 
-    console.log('Product deleted:', productId);
+ 
   } catch (error) {
     console.error('Delete product error:', error);
   }
@@ -420,7 +422,7 @@ const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
     </thead>
 
     <tbody>
-      {filteredProducts.map((product) => (
+      {currentProducts.map((product) => (
         <tr key={product.id}>
 
           <td>

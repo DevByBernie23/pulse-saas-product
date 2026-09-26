@@ -5,9 +5,11 @@ import { useEffect, useState } from 'react';
 import Header from '../../components/Header/Header';
 import Nav from '../../components/Nav/Nav';
 import { z } from 'zod'
+import { useWorkspace } from '../../context/WorkSpaceContext';
 
 
 const Customers = () => {
+     const { workspace } = useWorkspace();
      const [customers, setCustomerData] = useState([])
      const [loading, setLoading] = useState(true);
      const [error, setError] = useState(null);
@@ -28,14 +30,14 @@ const Customers = () => {
         setLoading(true) 
 
         try{
-         const response = await fetch('http://localhost:3000/customers');
+         const response = await fetch(`http://localhost:3000/customers?workspaceId=${workspace.id}`);
           if (!response.ok) {
           throw new Error('Failed to fetch customer data');
         }
       
         const data = await response.json();
 
-        console.log('Customer data:', data);
+ 
 
         setCustomerData(data);
         }
@@ -47,7 +49,7 @@ const Customers = () => {
       }
     }
       getCustomer();
-    }, []);
+    }, [workspace]);
     useEffect(() => {
   if (editingCustomer) {
     setName(editingCustomer.name);
@@ -184,7 +186,7 @@ return}
 setEmail('');
 setShowForm(false);
 
-    console.log('Created customer:', createdCustomer);
+   
   } catch (error) {
     console.error('Add customer error:', error);
     setSaving(false)
@@ -210,7 +212,7 @@ const deleteCustomer = async (customerId) => {
       )
     );
 
-    console.log('Customer deleted:', customerId);
+    
   } catch (error) {
     console.error('Delete customer error:', error);
   }
@@ -232,8 +234,8 @@ const filteredCustomers = customers.filter((customer) => {
 const startIndex = (currentPage - 1) * customersPerPage;
 const endIndex = startIndex + customersPerPage;
 
-const currentProducts = filteredProducts.slice(startIndex, endIndex);
-const totalPages = Math.ceil(filteredProducts.length / ordersPerPage);
+const currentCustomers= filteredCustomers.slice(startIndex, endIndex);
+const totalPages = Math.ceil(filteredCustomers.length / customersPerPage);
   return (
     <div>
        <div className="app">
@@ -364,7 +366,7 @@ const totalPages = Math.ceil(filteredProducts.length / ordersPerPage);
   </thead>
 
   <tbody>
-    {filteredCustomers.map((customer) => (
+    {currentCustomers.map((customer) => (
       <tr key={customer.id}>
 
         <td data-label="Customer">

@@ -16,8 +16,11 @@
   --accent: #8b5cf6;
   --accent-light: #ede9fe;
 
+   /* ---------- BACKGROUNDS ---------- */
 
-  /* ---------- BACKGROUNDS ---------- */
+  
+
+ 
 
   --bg: #f8f7fc;
   --surface: #ffffff;
@@ -86,7 +89,20 @@
   --transition: 200ms ease;
   --transition-slow: 300ms ease;
 }
+/*DARK THEME*/
+[data-theme="dark"] {
+  --bg: #111111;
+  --surface: #1b1b1b;
+  --surface-muted: #242124;
 
+  --text: #f5f5f5;
+  --text-muted: #a8a3ad;
+  --text-light: #77727d;
+
+  --border: #353139;
+  --border-light: #2a262e;
+  --border-purple: #7c3aed;
+}
 
 /* ========================================
    GLOBAL RESET

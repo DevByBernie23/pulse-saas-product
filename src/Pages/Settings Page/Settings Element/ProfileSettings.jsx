@@ -1,19 +1,102 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import { z } from 'zod'
+import { useUser } from '../../../context/userContext';
 const ProfileSettings = () => {
 
-  const [name, setName] = useState('Bernice Ahuoiza');
-  const [email, setEmail] = useState('bernice@123.com');
+  const [userName, setUserName] = useState('');
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState(null);
+  const [formErrors, setFormErrors] = useState(null)
+  const [saving, setSaving] = useState(false)
+  const [profiles, setProfiles] = useState({})
+  const [loading, setLoading] = useState(false)
+  const { currentUser, setCurrentUser } = useUser();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const currentUserId = currentUser?.id;
 
-    console.log({
-      name,
-      email
-    });
-  };
+  useEffect(() => {
+    const getProfile = async () => {
 
+      try{
+        setLoading(true)
+
+        const profileResponse = await fetch(`http://localhost:3000/users/${currentUserId}`)
+      if(!profileResponse.ok){
+       throw new Error('Failed to fetch profile data')
+      }
+      const profileData = await profileResponse.json()
+      setProfiles(profileData)
+      setUserName(profileData.userName)
+      setEmail(profileData.email)
+      } catch(error){
+        setError(error.message)
+      }finally{
+        setLoading(false)
+      }
+    }
+    getProfile()
+  }, [])
+  const profileValidation = z.object({
+    userName: z.string().min(1, 'username is required'),
+    email: z.string().min(1, 'email is required'),
+  });
+
+const changeProfile = async (e) => {
+  e.preventDefault()
+
+  const data ={
+     userName: userName.trim(),
+    email: email.trim(),
+  }
+  const result = profileValidation.safeParse(data)
+
+  if(!result.success){
+    const errors ={};
+
+    result.error.issues.forEach((issue) => {
+      errors[issue.path[0]] = issue.message
+    })
+    setFormErrors(errors)
+    return;
+  }
+  try{
+    setFormErrors({})
+    setSaving(true)
+
+     
+    const response = await fetch(
+      `http://localhost:3000/users/${currentUserId}`,
+
+    {
+      method: 'PATCH',
+      headers: {
+        'Content-Type' : 'application/json',
+      },
+      body: JSON.stringify({
+      userName: userName.trim(),
+      email: email.trim(),
+    })
+    }
+    )
+    if(!response.ok){
+      throw new Error ('failed to update profile')
+    }
+    const savedProfile = await response.json()
+    localStorage.setItem('currentUser', JSON.stringify(savedProfile));
+
+    setProfiles(savedProfile)
+    setEmail(savedProfile.email)
+    setUserName(savedProfile.userName)
+    setCurrentUser(savedProfile)
+  } catch(error){
+    setFormErrors({
+      profile: error.message,
+    })
+  } finally{
+    setSaving(false)
+    
+  }
+}
   return (
     <div className="settings-card">
 
@@ -25,10 +108,10 @@ const ProfileSettings = () => {
         </p>
       </div>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={changeProfile}>
 
         <div className="profile-avatar">
-          BA
+          {userName?.charAt(0)?.toUpperCase() || ""}
         </div>
 
         <div className="form-group">
@@ -36,8 +119,8 @@ const ProfileSettings = () => {
 
           <input
             type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
           />
         </div>
 
@@ -55,7 +138,7 @@ const ProfileSettings = () => {
           type="submit"
           className="save-btn"
         >
-          Save Changes
+          {saving? 'saving..' : 'Save Changes'}
         </button>
 
       </form>

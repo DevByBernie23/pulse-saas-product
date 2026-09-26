@@ -11,31 +11,89 @@ import {
 import './RevenueChart.css';
 
 import { useEffect, useState } from 'react';
+import { useWorkspace } from '../../../../context/WorkSpaceContext';
 
 
 const RevenueChart = () => {
+
+  const { workspace} = useWorkspace()
+  const [dateRange, setDateRange] = useState('30')
   const [loading, setLoading] = useState(true);
   const [revenueData, setRevenueData] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const getRevenue = async () => {
-      setLoading(true);
+      if (!workspace) {
+        setLoading(false)
+  return;
+}
+      
 
       try {
+        setLoading(true);
         const response = await fetch(
-          'http://localhost:3000/revenueData'
+          `http://localhost:3000/orders?workspaceId=${workspace.id}`
         );
 
         if (!response.ok) {
-          throw new Error('Failed to fetch revenue data');
+          throw new Error('Failed to fetch order data');
         }
 
-        const data = await response.json();
+        const orders = await response.json();
 
-        console.log('Revenue data:', data);
+const completedOrders = orders.filter(
+  (order) => order.status === 'Completed'
+);
 
-        setRevenueData(data);
+const orderDates = completedOrders.map(
+  (order) => new Date(order.date)
+);
+
+const latestOrderDate = new Date(
+  Math.max(...orderDates)
+);
+
+const filteredOrders = completedOrders.filter((order) => {
+  const orderDate = new Date(order.date);
+
+  if (dateRange === '30') {
+    const thirtyDaysAgo = new Date(latestOrderDate);
+    thirtyDaysAgo.setDate(latestOrderDate.getDate() - 30);
+
+    return orderDate >= thirtyDaysAgo && orderDate <= latestOrderDate;
+  }
+
+  if (dateRange === '90') {
+    const ninetyDaysAgo = new Date(latestOrderDate);
+    ninetyDaysAgo.setDate(latestOrderDate.getDate() - 90);
+
+    return orderDate >= ninetyDaysAgo && orderDate <= latestOrderDate;
+  }
+
+  if (dateRange === 'year') {
+    return orderDate.getFullYear() === latestOrderDate.getFullYear();
+  }
+
+  return true;
+});
+
+const revenueByDate = filteredOrders.reduce((acc, order) => {
+  if (!acc[order.date]) {
+    acc[order.date] = 0;
+  }
+
+  acc[order.date] += order.amount;
+
+  return acc;
+}, {});
+        const charData = Object.entries(revenueByDate).map(
+          ([date, revenue]) => ({
+            date, revenue
+          })
+        )
+
+        setRevenueData(charData);
       } catch (error) {
         console.error('Revenue error:', error);
         setError(error.message);
@@ -45,7 +103,7 @@ const RevenueChart = () => {
     };
 
     getRevenue();
-  }, []);
+  }, [workspace, dateRange]);
 
   if (loading) {
     return (
@@ -81,7 +139,9 @@ if (revenueData.length === 0) {
           <p>Track your revenue performance over time.</p>
         </div>
 
-        <select>
+        <select 
+        value={dateRange}
+          onChange={(e) => setDateRange(e.target.value)}>
           <option>Last 30 days</option>
           <option>Last 90 days</option>
           <option>This year</option>

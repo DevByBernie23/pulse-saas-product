@@ -13,10 +13,18 @@ import Settings from './Pages/Settings Page/Settings';
 import GetStarted from './Pages/GetStartedPage/GetStarted';
 import SignIn from './Pages/SignInPage/SignIn';
 import AnalyticsStats from './components/Analytics stats/AnalyticsStats';
+import { ThemeProvider } from './context/ThemeContext';
+import { LanguageProvider } from './context/LanguageContext';
+import { WorkspaceProvider } from './context/WorkSpaceContext';
+import { UserProvider } from './context/userContext';
 
 const App = () => {
   return (
-   <Routes>
+    <WorkspaceProvider>
+      <ThemeProvider>
+      <LanguageProvider>
+          <UserProvider>
+            <Routes>
     <Route path={home} element={<Home/>}/>
     <Route path={overview} element={<Overview/>}/>
     <Route path={analytics} element={<Analytics/>}/>
@@ -30,6 +38,13 @@ const App = () => {
     <Route path={homepage} element={<Home/>}/>
     <Route path={analyticsstats} element={<AnalyticsStats/>}/>
    </Routes>
+          </UserProvider>
+       
+      </LanguageProvider>
+      
+    </ThemeProvider>
+    </WorkspaceProvider>
+   
   )
 };
 

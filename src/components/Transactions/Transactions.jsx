@@ -1,21 +1,58 @@
-import { transactions } from './../../../../data/data';
+
+import { Link } from "react-router-dom";
+import { useWorkspace } from "../../../../context/WorkSpaceContext";
 import "./Transactions.css";
 import { useState, useEffect } from 'react';
+import { customerOrders } from "../../../../data/routes";
 
 const Transactions = () => {
+    const { workspace } = useWorkspace()
     const [transactions, setTransactions] = useState([]);
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
   
     useEffect(() => {
       const getTransactions = async () => {
-        const response = await fetch('http://localhost:3000/transactions');
-  
+        if(!workspace) return
+        try{
+          setLoading(true)
+        const response = await fetch(`http://localhost:3000/orders?workspaceId=${workspace.id}`);
+        
+        if(!response.ok){
+          throw new Error('Failed to fetch transactions')
+        }
         const data = await response.json();
         
-        setTransactions(data);
+        const recentTransactions = [...data]
+  .sort((a, b) => new Date(b.date) - new Date(a.date))
+  .slice(0, 6);
+
+setTransactions(recentTransactions);
+        }catch(error){
+          setError(error.message)
+        }finally{
+          setLoading(false)
+        }
       };
   
       getTransactions();
-    }, []);
+    }, [workspace]);
+
+    if(loading){
+      return (
+      <section>
+        <h2>Loading transactions...</h2>
+      </section>
+      )
+    }
+    if(error){
+      return(
+        <section>
+          <h2>Something went wrong</h2>
+          <p>{error}</p>
+        </section>
+      )
+    }
   return (
     <section className="transactions">
       <div className="transactions-header">
@@ -24,7 +61,7 @@ const Transactions = () => {
           <p>Keep track of your latest customer activity.</p>
         </div>
 
-        <button>View all →</button>
+        <Link to={customerOrders}><button>View all →</button></Link>
       </div>
 
       <div className="table-container">
@@ -33,7 +70,6 @@ const Transactions = () => {
             <tr>
               <th>Order</th>
               <th>Customer</th>
-              <th>Product</th>
               <th>Amount</th>
               <th>Status</th>
               <th>Date</th>
@@ -45,7 +81,6 @@ const Transactions = () => {
               <tr key={transaction.id}>
                 <td>{transaction.id}</td>
                 <td>{transaction.customer}</td>
-                <td>{transaction.product}</td>
                 <td>${transaction.amount}</td>
                 <td>
   <span

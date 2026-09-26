@@ -1,23 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useTheme } from '../../../context/ThemeContext';
+import { useLanguage } from '../../../context/LanguageContext';
+
+const translations = {
+  English: {
+    preferences: 'Preferences',
+    description: 'Customize your Pulse experience.',
+    theme: 'Theme',
+    language: 'Language',
+  },
+
+  French: {
+    preferences: 'Préférences',
+    description: 'Personnalisez votre expérience Pulse.',
+    theme: 'Thème',
+    language: 'Langue',
+  },
+
+  Spanish: {
+    preferences: 'Preferencias',
+    description: 'Personaliza tu experiencia de Pulse.',
+    theme: 'Tema',
+    language: 'Idioma',
+  },
+}
 
 const PreferencesSettings = () => {
+  const { theme, setTheme } = useTheme();
+  const {language, setLanguage} = useLanguage()
+  const currentTranslations = translations[language]
 
-  const [theme, setTheme] = useState('light');
-  const [language, setLanguage] = useState('English');
-
+ 
   return (
     <div className="settings-card">
 
       <div className="settings-card-header">
-        <h2>Preferences</h2>
-
-        <p>
-          Customize your Pulse experience.
-        </p>
+        <h2>{currentTranslations.preferences}</h2>
+        <p>{currentTranslations.description}</p>
       </div>
 
       <div className="form-group">
-        <label>Theme</label>
+        <label>{currentTranslations.theme}</label>
 
         <select
           value={theme}
@@ -30,7 +53,7 @@ const PreferencesSettings = () => {
       </div>
 
       <div className="form-group">
-        <label>Language</label>
+        <label>{currentTranslations.language}</label>
 
         <select
           value={language}

@@ -1,11 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const NotificationSettings = () => {
 
-  const [emailNotifications, setEmailNotifications] = useState(true);
-  const [orderNotifications, setOrderNotifications] = useState(true);
-  const [marketingNotifications, setMarketingNotifications] = useState(false);
+  const [emailNotifications, setEmailNotifications] = useState(
+  localStorage.getItem('emailNotifications') !== 'false'
+);
 
+const [orderNotifications, setOrderNotifications] = useState(
+  localStorage.getItem('orderNotifications') !== 'false'
+);
+
+const [marketingNotifications, setMarketingNotifications] = useState(
+  localStorage.getItem('marketingNotifications') === 'true'
+);
+useEffect (() => {
+localStorage.setItem('emailNotifications', emailNotifications);
+}, [emailNotifications]);
+
+useEffect (() =>{
+localStorage.setItem('orderNotifications', orderNotifications)
+}, [orderNotifications]);
+
+useEffect (() => {
+localStorage.setItem('marketingNotifications', marketingNotifications)
+}, [marketingNotifications])
   return (
     <div className="settings-card">
 
@@ -30,8 +48,8 @@ const NotificationSettings = () => {
         <input
           type="checkbox"
           checked={emailNotifications}
-          onChange={() =>
-            setEmailNotifications(!emailNotifications)
+          onChange={(e) =>
+            setEmailNotifications(e.target.checked)
           }
         />
 
@@ -50,8 +68,8 @@ const NotificationSettings = () => {
         <input
           type="checkbox"
           checked={orderNotifications}
-          onChange={() =>
-            setOrderNotifications(!orderNotifications)
+          onChange={(e) =>
+            setOrderNotifications(e.target.checked)
           }
         />
 
@@ -70,8 +88,8 @@ const NotificationSettings = () => {
         <input
           type="checkbox"
           checked={marketingNotifications}
-          onChange={() =>
-            setMarketingNotifications(!marketingNotifications)
+          onChange={(e) =>
+            setMarketingNotifications(e.target.checked)
           }
         />
 

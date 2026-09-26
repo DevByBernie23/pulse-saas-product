@@ -23,11 +23,10 @@ const handleSubmit = async (e) => {
   });
 
   if (!result.success) {
-    console.log(result.error.issues);
+   
     return;
   }
 
-  console.log('Validation successful:', result.data);
 
 try {
   const response = await fetch('http://localhost:3000/users');
@@ -37,6 +36,7 @@ try {
   }
 
   const users = await response.json();
+  
   const user = users.find(
   (user) => user.email.toLowerCase() === email.trim().toLowerCase()
 );
@@ -51,8 +51,7 @@ if (user.password !== password) {
 }
 const loggedInUser = {
   id: user.id,
-  firstName: user.firstName,
-  lastName: user.lastName,
+  userName: user.userName,
   email: user.email,
 };
 
